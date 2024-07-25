@@ -1,0 +1,755 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Статистика | espays</title>
+        <meta name="theme-color" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="https://espays.com/templates/loadpays/favicon/e.ico" type="image/x-icon">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://espays.com/templates/loadpays/css/vendor.min.css">
+        <link rel="stylesheet" href="https://espays.com/templates/loadpays/css/jquery.fancybox.css">
+        <link rel="stylesheet" href="https://espays.com/templates/loadpays/css/swiper.min.css">
+        <link rel="stylesheet" href="https://espays.com/templates/loadpays/css/promo-push.css?v=55">
+        <link rel="stylesheet" href="https://espays.com/templates/loadpays/css/main.css?v=702">
+        <link rel="stylesheet" href="payments.css">
+    </head>
+    <body class="">
+        <div class="wrapper">
+            <aside class="wrapper__sidebar " data-page="sidebar">
+                <div class="wrapper__sidebar-head d-flex flex-wrap justify-content-center" data-page="sidebar-head">
+                  <span class="logo-burger js-burger-sidebar" data-sidebar="mini">
+                    <div class="burger burger-sidebar ">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                  </span>
+                  <span class="logo-burger js-burger-sidebar-mob-close">
+                    <div class="burger burger-sidebar-mob-close">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                  </span>
+                    <a href="/statistic/" class="logo">
+                      <span class="header__logo">
+                        <span class="logo-main logo-main-loadpays">
+                          <img src="https://espays.com/templates/loadpays/images/design/logo-2.svg" alt="Logo">
+                        </span>
+                      </span>
+                    </a>
+                </div>
+                <div class="wrapper__sidebar-in">
+                    <a href="#" class="logo logo_dubl">
+                        <img src="https://espays.com/templates/loadpays/images/content/logo.png" alt="">
+                        <span>es<span>pays</span></span>
+                    </a>
+                    <div class="wrapper__sidebar-main" data-scrollBar="axisY">
+                        <div class="currency-info">
+                            <div>
+                                <span>1$ =</span>
+                                <span>77.82<i class="rub-ico">₽</i></span>
+                            </div>
+                            <div>
+                                <span>Cтавка:</span>
+                                <span>80%</span>
+                            </div>
+                        </div>
+                        <nav class="sidebar-menu">
+                            <ul class="nav nav-pills">
+                                <li class="nav-item">
+                                    <a href="https://espays.com/statistic" data-sidebar-menu-link="statistic" class="nav-link js-sidebar-menu-link mainactive " data-title="Статистика">
+                                      <p class="icon-wrapper">
+                                        <span class="iconSvg iconSvg-statistic"></span>
+                                        <span>Статистика</span>
+                                      </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://espays.com/exchange" data-sidebar-menu-link="exchange" class="nav-link js-sidebar-menu-link " data-title="Биржа">
+                                      <p class="icon-wrapper">
+                                        <span class="iconSvg iconSvg-stock-exchange"></span>
+                                        <span>Биржа</span>
+                                      </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://espays.com/promo/links.html" data-sidebar-menu-link="links" class="nav-link js-sidebar-menu-link " data-title="Промо">
+                                      <p class="icon-wrapper">
+                                        <span class="iconSvg iconSvg-folder"></span>
+                                        <span>Промо</span>
+                                      </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://espays.com/payments" data-sidebar-menu-link="payments" class="nav-link js-sidebar-menu-link " data-title="Выплаты">
+                                      <p class="icon-wrapper">
+                                        <span class="iconSvg iconSvg-credits"></span>
+                                        <span>Выплаты</span>
+                                      </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://espays.com/referals" data-sidebar-menu-link="referals" class="nav-link js-sidebar-menu-link " data-title="Рефералы">
+                                      <p class="icon-wrapper">
+                                        <span class="iconSvg iconSvg-peoples"></span>
+                                        <span>Рефералы</span>
+                                      </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://espays.com/setting" data-sidebar-menu-link="setting" class="nav-link js-sidebar-menu-link " data-title="Настройки">
+                                      <p class="icon-wrapper">
+                                        <span class="iconSvg iconSvg-settings"></span>
+                                        <span>Настройки</span>
+                                      </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://espays.com/news" data-sidebar-menu-link="news" class="nav-link js-sidebar-menu-link " data-title="Новости">
+                                        <p class="icon-wrapper">
+                                           <span class="nav-item__counter">+</span><span class="iconSvg iconSvg-document"></span>
+                                            <span>Новости</span>
+                                          </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://espays.com/tickets" data-sidebar-menu-link="tickets" class="nav-link js-sidebar-menu-link " data-title="Тикеты">
+                                        <p class="icon-wrapper" id="badge_tickets">
+                                           <span class="iconSvg iconSvg-message"></span>
+                                            <span>Тикеты</span>
+                                          </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://espays.com/contacts" data-sidebar-menu-link="contacts" class="nav-link js-sidebar-menu-link " data-title="Контакты">
+                                      <p class="icon-wrapper">
+                                        <span class="iconSvg iconSvg-envelope"></span>
+                                        <span>Контакты</span>
+                                      </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://espays.com/faq" data-sidebar-menu-link="faq" class="nav-link js-sidebar-menu-link " data-title="FAQ">
+                                      <p class="icon-wrapper">
+                                        <span class="iconSvg iconSvg-circle"></span>
+                                        <span>FAQ</span>
+                                      </p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <!--<div class="operators">
+                            <ul>
+                                <li>
+                                    <a href="#" class="percent">
+                                        <div class="percent-circle percent-circle_red">xx<sup>%</sup></div>
+                                        <div>
+                                            <img src="https://espays.com/templates/loadpays/images/content/mtsfull.png" alt="" class="mts-pic">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="percent">
+                                        <div class="percent-circle percent-circle_green_light">xx<sup>%</sup></div>
+                                        <div>
+                                            <img src="https://espays.com/templates/loadpays/images/content/megafonefull.png" alt="" class="megafone-pic">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="percent">
+                                        <div class="percent-circle percent-circle_yellow">xx<sup>%</sup></div>
+                                        <div>
+                                            <img src="https://espays.com/templates/loadpays/images/content/beelinefull.png" alt="" class="beeline-pic">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="percent">
+                                        <div class="percent-circle percent-circle_green">xx<sup>%</sup></div>
+                                        <div>
+                                            <img src="https://espays.com/templates/loadpays/images/content/tele2full.png" alt="" class="tele2-pic">
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>-->
+                    </div>
+                </div>
+                <div class="wrapper__sidebar-foot" data-page="sidebar-foot">
+                    <div class="copy">©2010 - 2020 espays.com<br>LemonBit Limited</div>
+                    <footer class="footer" data-page="footer">
+                        <div class="company-social">
+                            <ul class="d-flex flex-wrap justify-content-center justify-content-md-end">
+                            <li>
+                                <a href="https://t.me/espays_com">
+                                    <span class="iconContent">
+                                        <span class="iconSvg iconSvg-paper-plane"></span>
+                                        <span class="iconContent__wrap">@espays_com</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:info@espays.com">
+                                    <span class="iconContent">
+                                        <span class="iconSvg iconSvg-envelope-open"></span>
+                                        <span class="iconContent__wrap">info@espays.com</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <!-- <li>
+                                <a href="mailto:162-800-800" class="icq-link">
+                                    <span class="iconContent">
+                                        <span class="iconSvg iconSvg-icq"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16.683 16.683" style="enable-background:new 0 0 16.683 16.683;" xml:space="preserve">
+                                        <g>
+                                            <path d="M14.973,8.04c-0.408-0.156-0.963-0.254-1.554-0.281c1.058-0.447,1.649-1.448,1.32-2.235
+                                                c-0.331-0.79-1.465-1.07-2.528-0.626c-0.272,0.113-0.59,0.297-0.906,0.52c0.524-0.56,0.951-1.191,1.149-1.71
+                                                c0.528-1.373-0.16-2.919-1.533-3.447C9.548-0.266,8,0.423,7.474,1.796c-0.106,0.271-0.183,0.611-0.231,0.98
+                                                C6.753,1.875,5.85,1.397,5.124,1.7c-0.79,0.33-1.07,1.466-0.625,2.528c0.03,0.071,0.066,0.148,0.104,0.224
+                                                c-0.34-0.241-0.679-0.435-0.978-0.551c-1.374-0.528-2.92,0.161-3.447,1.534C-0.35,6.81,0.339,8.355,1.712,8.883
+                                                C2.016,8.999,2.403,9.081,2.825,9.13c-1.04,0.453-1.618,1.441-1.292,2.222c0.33,0.79,1.465,1.071,2.528,0.626
+                                                c0.018-0.008,0.036-0.017,0.055-0.025c-0.258,0.355-0.462,0.709-0.583,1.02c-0.527,1.375,0.161,2.921,1.534,3.449
+                                                c1.373,0.526,2.919-0.162,3.447-1.534c0.173-0.448,0.273-1.072,0.287-1.729c0.033,0.101,0.067,0.196,0.103,0.281
+                                                c0.444,1.064,1.449,1.66,2.239,1.329c0.79-0.33,1.07-1.464,0.626-2.527c-0.002-0.004-0.003-0.008-0.006-0.012
+                                                c0.443,0.358,0.902,0.642,1.296,0.793c1.373,0.526,2.921-0.161,3.449-1.534C17.032,10.115,16.345,8.569,14.973,8.04z M12.365,5.264
+                                                c0.79-0.33,1.634-0.121,1.88,0.465c0.246,0.588-0.198,1.335-0.989,1.667c-0.579,0.242-1.806,0.453-2.517,0.316
+                                                c-0.031-0.105-0.065-0.209-0.112-0.312c-0.081-0.181-0.183-0.347-0.299-0.499C10.696,6.289,11.763,5.516,12.365,5.264z
+                                                 M8.111,2.041c0.393-1.021,1.543-1.534,2.565-1.142c1.021,0.393,1.533,1.542,1.142,2.564c-0.326,0.847-1.565,2.364-2.562,2.634
+                                                C8.997,5.996,8.72,5.943,8.438,5.933C7.675,5.244,7.754,2.971,8.111,2.041z M5.33,2.195C5.919,1.95,6.666,2.393,6.997,3.184
+                                                C7.064,3.345,7.128,3.555,7.184,3.79c0.008,0.472,0.064,0.947,0.174,1.379c0,0.515-0.092,0.942-0.344,1.047
+                                                c-0.588,0.246-1.817-1.35-2.148-2.141C4.534,3.284,4.743,2.441,5.33,2.195z M1.957,8.244C0.935,7.853,0.423,6.702,0.816,5.68
+                                                c0.392-1.021,1.542-1.534,2.563-1.141c0.992,0.38,2.894,2.008,2.653,3.039C6.016,7.624,6,7.67,5.986,7.717
+                                                C5.534,8.692,2.964,8.631,1.957,8.244z M7.877,14.642c-0.392,1.021-1.543,1.533-2.565,1.141c-1.021-0.392-1.534-1.543-1.142-2.564
+                                                c0.368-0.958,1.905-2.776,2.937-2.676c0.14,0.083,0.288,0.15,0.439,0.203C8.312,11.434,8.235,13.708,7.877,14.642z M6.644,9.174
+                                                C6.223,8.226,6.649,7.111,7.598,6.691c0.949-0.423,2.063,0.004,2.485,0.954c0.407,0.917,0.015,1.985-0.871,2.436H9.21
+                                                c-0.005,0.002-0.009,0.007-0.015,0.01c-0.023,0.011-0.043,0.027-0.067,0.038C8.181,10.551,7.066,10.122,6.644,9.174z
+                                                 M10.936,14.277c-0.587,0.244-1.333-0.199-1.665-0.991c-0.237-0.567-0.445-1.754-0.326-2.47c0.145-0.034,0.287-0.081,0.427-0.142
+                                                c0.168-0.075,0.321-0.166,0.463-0.271c0.601,0.403,1.325,1.412,1.567,1.992C11.733,13.186,11.524,14.029,10.936,14.277z
+                                                 M15.868,11.243c-0.393,1.021-1.542,1.534-2.564,1.143c-0.986-0.38-2.877-1.995-2.655-3.026c0.026-0.063,0.05-0.126,0.07-0.19
+                                                c0.5-0.936,3.015-0.872,4.009-0.491C15.748,9.07,16.261,10.223,15.868,11.243z"></path>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        </svg></span>
+                                        <span class="iconContent__wrap">162-800-800</span>
+                                    </span>
+                                </a>
+                            </li> -->
+                            <li>
+                                <a href="skype:loadplays.com">
+                                    <span class="iconContent">
+                                        <span class="iconSvg iconSvg-skype"></span>
+                                        <span class="iconContent__wrap">loadplays.com</span>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        </div>
+                    </footer>
+                </div>
+            </aside>
+            <div class="wrapper__content " data-page="main-content">
+                <header class="header" data-page="header">
+                    <div class="d-flex flex-wrap align-items-center justify-content-between">
+                        <!-- <button class="iconSvg iconSvg-menu" data-sidebar="visible"></button> -->
+                        <span class="logo-burger js-burger-sidebar-mob" data-sidebar="mini">
+                          <div class="burger burger-sidebar-mob">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                          </div>
+                        </span>
+                        <div class="stat-list">
+                                                        <ul class="d-flex flex-wrap">
+                                <li>
+                                    <div class="profile-stat">
+                                        <div class="profile-stat__name">Досрочно:</div>
+                                        <div class="profile-stat__val">0.00<i class="rub-ico">₽</i> <span>($0.00)</span></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="profile-stat">
+                                        <div class="profile-stat__name">Биржа:</div>
+                                        <div class="profile-stat__val" id="exchangebalance">0.00<i class="rub-ico">₽</i> <span>($0.00)</span></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="profile-stat">
+                                        <div class="profile-stat__name">Баланс:</div>
+                                        <div class="profile-stat__val" id="userbalance">0.00<i class="rub-ico">₽</i> <span>($0.00)</span></div>
+                                    </div>
+                                </li>
+                                                                <li>
+                                    <div class="profile-stat">
+                                        <div class="profile-stat__name">К выплате:</div>
+                                        <div class="profile-stat__val">73.62<i class="rub-ico">₽</i> <span>($0.95)</span></div>
+                                    </div>
+                                </li>
+                                <!-- <li>
+                                    <div id="result"></div>
+                                </li> -->
+                            </ul>
+                        </div>
+
+                                  <div class="personal">
+							<button class="personal__btn" data-user="toggle">
+								<span class="initials">V</span>
+								<span class="personal__name">
+									<span>verstka</span>
+									<span class="iconSvg iconSvg-caret-bottom"></span>
+								</span>
+							</button>
+							<ul class="personal__popup">
+								<li>
+									<a href="https://espays.com/account/">
+										<span class="iconSvg iconSvg-user"></span>
+										<span>Профиль</span>
+									</a>
+								</li>
+                                                                								<li class="nav-item">
+									<a href="https://vigen.espays.com/base/index/" class="nav-link">
+										<span class="iconSvg iconSvg-logout"></span>
+										<span>Админка</span>
+									</a>
+								</li>
+                                                                								<li>
+									<a href="https://espays.com/?exit=1">
+										<span class="iconSvg iconSvg-logout"></span>
+										<span>Выход</span>
+									</a>
+								</li>
+							</ul>
+					</div>
+                    </div>
+                </header>
+        <main class="page-content">
+					<div class="page-content__indents" data-page="tab-content-indents">
+						<div class="page-content__in" id="pills-container">
+							<div class="sub-pills">
+                <div id="submenu">
+									<div class="sub-menu_fixed" data-element="sub-menu">
+  <button class="iconSvg iconSvg-menu d-block ml-auto d-md-none" data-toggle="sub-menu-visible"></button>
+  <div class="sub-menu">
+    <div class="sub-menu__in d-md-flex">
+      <div class="sub-menu__in d-md-flex">	
+        <button class="iconSvg iconSvg-close d-md-none" data-toggle="sub-menu-unvisible"></button>						
+        <ul class="nav nav-pills align-items-stretch">
+          <li class="nav-item active">
+								<a href="/statistic/" onclick="$('.active').removeClass('active'); $(this).parent().attr('class','nav-item active'); setLocation('/statistic/'); echomoduleblock('statistic','menu'); $(this).parent().addClass('active');return false;" class="nav-link" id="statistic_menu">Общая</a>
+							</li>          <li class="nav-item ">
+								<a href="/statistic/rvn.html" onclick="$('.active').removeClass('active'); $(this).parent().attr('class','nav-item active'); setLocation('/statistic/rvn.html'); echomoduleblock('rvn','menu'); $(this).parent().addClass('active');return false;" class="nav-link" id="rvn_menu">РВН</a>
+							</li>          <li class="nav-item ">
+								<a href="/statistic/active-subscriptions.html" onclick="$('.active').removeClass('active'); $(this).parent().attr('class','nav-item active'); setLocation('/statistic/active-subscriptions.html'); echomoduleblock('active-subscriptions','menu'); $(this).parent().addClass('active');return false;" class="nav-link" id="active-subscriptions_menu">Активные подписки</a>
+							</li>          <li class="nav-item ">
+								<a href="/statistic/subscriptions.html" onclick="$('.active').removeClass('active'); $(this).parent().attr('class','nav-item active'); setLocation('/statistic/subscriptions.html'); echomoduleblock('subscriptions','menu'); $(this).parent().addClass('active');return false;" class="nav-link" id="subscriptions_menu">Подписки</a>
+							</li>          <li class="nav-item ">
+								<a href="/statistic/rebills.html" onclick="$('.active').removeClass('active'); $(this).parent().attr('class','nav-item active'); setLocation('/statistic/rebills.html'); echomoduleblock('rebills','menu'); $(this).parent().addClass('active');return false;" class="nav-link" id="rebills_menu">Ребиллы</a>
+							</li>          <li class="nav-item ">
+								<a href="/statistic/unsubscriptions.html" onclick="$('.active').removeClass('active'); $(this).parent().attr('class','nav-item active'); setLocation('/statistic/unsubscriptions.html'); echomoduleblock('unsubscriptions','menu'); $(this).parent().addClass('active');return false;" class="nav-link" id="unsubscriptions_menu">Отписки</a>
+							</li>          <li class="nav-item ">
+								<a href="/statistic/ro.html" onclick="$('.active').removeClass('active'); $(this).parent().attr('class','nav-item active'); setLocation('/statistic/ro.html'); echomoduleblock('ro','menu'); $(this).parent().addClass('active');return false;" class="nav-link" id="ro_menu">РО</a>
+							</li>          <li class="nav-item ">
+								<a href="/statistic/sms.html" onclick="$('.active').removeClass('active'); $(this).parent().attr('class','nav-item active'); setLocation('/statistic/sms.html'); echomoduleblock('sms','menu'); $(this).parent().addClass('active');return false;" class="nav-link" id="sms_menu">SMS</a>
+							</li>          <li class="nav-item ">
+								<a href="/statistic/leads.html" onclick="$('.active').removeClass('active'); $(this).parent().attr('class','nav-item active'); setLocation('/statistic/leads.html'); echomoduleblock('leads','menu'); $(this).parent().addClass('active');return false;" class="nav-link" id="leads_menu">Leads</a>
+							</li>          <li class="nav-item ">
+								<a href="/statistic/top.html" onclick="$('.active').removeClass('active'); $(this).parent().attr('class','nav-item active'); setLocation('/statistic/top.html'); echomoduleblock('top','menu'); $(this).parent().addClass('active');return false;" class="nav-link" id="top_menu">Топ</a>
+							</li>          <li class="nav-item ">
+								<a href="/statistic/kei.html" onclick="$('.active').removeClass('active'); $(this).parent().attr('class','nav-item active'); setLocation('/statistic/kei.html'); echomoduleblock('kei','menu'); $(this).parent().addClass('active');return false;" class="nav-link" id="kei_menu">Кеи</a>
+							</li>        </ul>
+      </div>
+    </div>
+  </div>
+</div>								</div>
+                <div id="result"></div>
+                <div class="notifications"></div>
+								<div class="sub-pills__content" id="pill-in-container">
+									<div id="contentblock">
+										<section class="section section_total_statistic">
+   
+   
+   
+   										<!-- START Block vyplaty -->
+   											<h1>Заказ досрочной выплаты</h1>
+   											<div class="block__early-payments">
+   												<div class="block__early-payments-left">
+   													<div class="block__epl-title">Ваш баланс</div>
+   													<div class="block__epl-balace">
+   														<div class="block__epl-rub">9 999 700.00₽</div>
+   														<div class="block__epl-usd">($9 999 999.00)</div>
+   													</div>
+   												</div>
+   												
+   												<div class="block__early-payments-right">
+   													<form method="post">
+   														<div class="block__epr-title">Введите сумму</div>
+   														<div class="block__epr-form-summ">
+   															<div class="block__epr-form-input"><input name="summ" id="summ" type="text" value="95"/></div>
+   															<div class="block__epr-form-subinput">6000</div>
+   															<div class="block__epr-form-comments">Минимально доступная сумма для досрочной выплаты - эквивалент <strong>500₽</strong></div>
+   														</div>
+   														<div class="block__epr-form-checked">
+   															<div class="block__epr-form-checked-box"><input type="checkbox" name="urgent" /></div>
+   															<div class="block__epr-form-checked-title">Срочная выплата</div>
+   														</div>
+   														<div class="block__epr-title mt42">Тип оплаты</div>
+   														<div class="block__epr-form-type-payments">
+   															<div class="block__epr-ftp-items active" data-payment="wm-1 wm-2">
+   																<img src="webmoney.svg" alt=""/>
+   															</div>
+   															<div class="block__epr-ftp-items" data-payment="px-1 px-2">
+   																<img src="paxum.svg" alt=""/>
+   															</div>
+   															<div class="block__epr-ftp-items" data-payment="ep-1 ep-2">
+   																<img src="epay.svg" alt=""/>
+   															</div>
+   														</div>
+   														<div class="block__epr-title mt42">Счет</div>
+   														<div class="block__epr-form-bill">
+   															<div class="block__epr-ftb-items wm-1 active">
+   																<div class="block__epr-ftb-title">WMZ</div>
+   																<div class="block__epr-ftb-logo wm"></div>
+   																<div class="block__epr-ftb-number">Z878022128134</div>
+   															</div>
+   															<div class="block__epr-ftb-items wm-2">
+   																<div class="block__epr-ftb-title">WMZ</div>
+   																<div class="block__epr-ftb-logo wm"></div>
+   																<div class="block__epr-ftb-number">Z878022128134</div>
+   															</div>
+   															<div class="block__epr-ftb-items px-1 active">
+   																<div class="block__epr-ftb-title">USD</div>
+   																<div class="block__epr-ftb-logo px"></div>
+   																<div class="block__epr-ftb-number">1234567890</div>
+   															</div>
+   															<div class="block__epr-ftb-items px-2">
+   																<div class="block__epr-ftb-title">USD</div>
+   																<div class="block__epr-ftb-logo px"></div>
+   																<div class="block__epr-ftb-number">0123456789</div>
+   															</div>
+   															<div class="block__epr-ftb-items ep-1 visible active">
+   																<div class="block__epr-ftb-title">USD</div>
+   																<div class="block__epr-ftb-logo ep"></div>
+   																<div class="block__epr-ftb-number">1234567890</div>
+   															</div>
+   															<div class="block__epr-ftb-items ep-2 visible">
+   																<div class="block__epr-ftb-title">USD</div>
+   																<div class="block__epr-ftb-logo ep"></div>
+   																<div class="block__epr-ftb-number">0123456789</div>
+   															</div>
+   															<div class="block__epr-ftb-items ftb-added">
+   																<div class="ftb-added-block"><img src="payment-add.svg" alt=""/></div>
+   															</div>
+   														</div>
+   														<div class="block__epr-form-submit">
+   															<button type="submit" class="block__epr-form-btnsubmit">Продолжить</button>
+   														</div>
+   													</form>
+   												</div>
+   											</div>
+   										
+   										<!-- END Block vyplaty -->
+        
+
+
+										</section>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</main>
+        <footer class="footer" data-page="footer">
+					<div class="company-social">
+						<ul class="d-flex flex-wrap justify-content-center justify-content-md-end">
+							<li>
+								<a href="https://t.me/espays_com">
+									<span class="iconContent">
+										<span class="iconSvg iconSvg-paper-plane"></span>
+										<span class="iconContent__wrap">@espays_com</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="mailto:info@espays.com">
+									<span class="iconContent">
+										<span class="iconSvg iconSvg-envelope-open"></span>
+										<span class="iconContent__wrap">info@espays.com</span>
+									</span>
+								</a>
+							</li>
+							<!-- <li>
+								<a href="mailto:162-800-800" class="icq-link">
+									<span class="iconContent">
+										<span class="iconSvg iconSvg-icq"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16.683 16.683" style="enable-background:new 0 0 16.683 16.683;" xml:space="preserve">
+										<g>
+											<path d="M14.973,8.04c-0.408-0.156-0.963-0.254-1.554-0.281c1.058-0.447,1.649-1.448,1.32-2.235
+												c-0.331-0.79-1.465-1.07-2.528-0.626c-0.272,0.113-0.59,0.297-0.906,0.52c0.524-0.56,0.951-1.191,1.149-1.71
+												c0.528-1.373-0.16-2.919-1.533-3.447C9.548-0.266,8,0.423,7.474,1.796c-0.106,0.271-0.183,0.611-0.231,0.98
+												C6.753,1.875,5.85,1.397,5.124,1.7c-0.79,0.33-1.07,1.466-0.625,2.528c0.03,0.071,0.066,0.148,0.104,0.224
+												c-0.34-0.241-0.679-0.435-0.978-0.551c-1.374-0.528-2.92,0.161-3.447,1.534C-0.35,6.81,0.339,8.355,1.712,8.883
+												C2.016,8.999,2.403,9.081,2.825,9.13c-1.04,0.453-1.618,1.441-1.292,2.222c0.33,0.79,1.465,1.071,2.528,0.626
+												c0.018-0.008,0.036-0.017,0.055-0.025c-0.258,0.355-0.462,0.709-0.583,1.02c-0.527,1.375,0.161,2.921,1.534,3.449
+												c1.373,0.526,2.919-0.162,3.447-1.534c0.173-0.448,0.273-1.072,0.287-1.729c0.033,0.101,0.067,0.196,0.103,0.281
+												c0.444,1.064,1.449,1.66,2.239,1.329c0.79-0.33,1.07-1.464,0.626-2.527c-0.002-0.004-0.003-0.008-0.006-0.012
+												c0.443,0.358,0.902,0.642,1.296,0.793c1.373,0.526,2.921-0.161,3.449-1.534C17.032,10.115,16.345,8.569,14.973,8.04z M12.365,5.264
+												c0.79-0.33,1.634-0.121,1.88,0.465c0.246,0.588-0.198,1.335-0.989,1.667c-0.579,0.242-1.806,0.453-2.517,0.316
+												c-0.031-0.105-0.065-0.209-0.112-0.312c-0.081-0.181-0.183-0.347-0.299-0.499C10.696,6.289,11.763,5.516,12.365,5.264z
+												 M8.111,2.041c0.393-1.021,1.543-1.534,2.565-1.142c1.021,0.393,1.533,1.542,1.142,2.564c-0.326,0.847-1.565,2.364-2.562,2.634
+												C8.997,5.996,8.72,5.943,8.438,5.933C7.675,5.244,7.754,2.971,8.111,2.041z M5.33,2.195C5.919,1.95,6.666,2.393,6.997,3.184
+												C7.064,3.345,7.128,3.555,7.184,3.79c0.008,0.472,0.064,0.947,0.174,1.379c0,0.515-0.092,0.942-0.344,1.047
+												c-0.588,0.246-1.817-1.35-2.148-2.141C4.534,3.284,4.743,2.441,5.33,2.195z M1.957,8.244C0.935,7.853,0.423,6.702,0.816,5.68
+												c0.392-1.021,1.542-1.534,2.563-1.141c0.992,0.38,2.894,2.008,2.653,3.039C6.016,7.624,6,7.67,5.986,7.717
+												C5.534,8.692,2.964,8.631,1.957,8.244z M7.877,14.642c-0.392,1.021-1.543,1.533-2.565,1.141c-1.021-0.392-1.534-1.543-1.142-2.564
+												c0.368-0.958,1.905-2.776,2.937-2.676c0.14,0.083,0.288,0.15,0.439,0.203C8.312,11.434,8.235,13.708,7.877,14.642z M6.644,9.174
+												C6.223,8.226,6.649,7.111,7.598,6.691c0.949-0.423,2.063,0.004,2.485,0.954c0.407,0.917,0.015,1.985-0.871,2.436H9.21
+												c-0.005,0.002-0.009,0.007-0.015,0.01c-0.023,0.011-0.043,0.027-0.067,0.038C8.181,10.551,7.066,10.122,6.644,9.174z
+												 M10.936,14.277c-0.587,0.244-1.333-0.199-1.665-0.991c-0.237-0.567-0.445-1.754-0.326-2.47c0.145-0.034,0.287-0.081,0.427-0.142
+												c0.168-0.075,0.321-0.166,0.463-0.271c0.601,0.403,1.325,1.412,1.567,1.992C11.733,13.186,11.524,14.029,10.936,14.277z
+												 M15.868,11.243c-0.393,1.021-1.542,1.534-2.564,1.143c-0.986-0.38-2.877-1.995-2.655-3.026c0.026-0.063,0.05-0.126,0.07-0.19
+												c0.5-0.936,3.015-0.872,4.009-0.491C15.748,9.07,16.261,10.223,15.868,11.243z"></path>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										</svg></span>
+										<span class="iconContent__wrap">162-800-800</span>
+									</span>
+								</a>
+							</li> -->
+							<li>
+								<a href="skype:loadplays.com">
+									<span class="iconContent">
+										<span class="iconSvg iconSvg-skype"></span>
+										<span class="iconContent__wrap">loadplays.com</span>
+									</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</footer>
+				<footer class="footer" data-page="footer">
+					<div class="company-social">
+						<ul class="d-flex flex-wrap justify-content-center justify-content-md-end">
+							<li>
+								<a href="https://t.me/espays_com">
+									<span class="iconContent">
+										<span class="iconSvg iconSvg-paper-plane"></span>
+										<span class="iconContent__wrap">@espays_com</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="mailto:info@espays.com">
+									<span class="iconContent">
+										<span class="iconSvg iconSvg-envelope-open"></span>
+										<span class="iconContent__wrap">info@espays.com</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="mailto:162-800-800" class="icq-link">
+									<span class="iconContent">
+										<span class="iconSvg iconSvg-icq"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+											 viewBox="0 0 16.683 16.683" style="enable-background:new 0 0 16.683 16.683;" xml:space="preserve">
+										<g>
+											<path d="M14.973,8.04c-0.408-0.156-0.963-0.254-1.554-0.281c1.058-0.447,1.649-1.448,1.32-2.235
+												c-0.331-0.79-1.465-1.07-2.528-0.626c-0.272,0.113-0.59,0.297-0.906,0.52c0.524-0.56,0.951-1.191,1.149-1.71
+												c0.528-1.373-0.16-2.919-1.533-3.447C9.548-0.266,8,0.423,7.474,1.796c-0.106,0.271-0.183,0.611-0.231,0.98
+												C6.753,1.875,5.85,1.397,5.124,1.7c-0.79,0.33-1.07,1.466-0.625,2.528c0.03,0.071,0.066,0.148,0.104,0.224
+												c-0.34-0.241-0.679-0.435-0.978-0.551c-1.374-0.528-2.92,0.161-3.447,1.534C-0.35,6.81,0.339,8.355,1.712,8.883
+												C2.016,8.999,2.403,9.081,2.825,9.13c-1.04,0.453-1.618,1.441-1.292,2.222c0.33,0.79,1.465,1.071,2.528,0.626
+												c0.018-0.008,0.036-0.017,0.055-0.025c-0.258,0.355-0.462,0.709-0.583,1.02c-0.527,1.375,0.161,2.921,1.534,3.449
+												c1.373,0.526,2.919-0.162,3.447-1.534c0.173-0.448,0.273-1.072,0.287-1.729c0.033,0.101,0.067,0.196,0.103,0.281
+												c0.444,1.064,1.449,1.66,2.239,1.329c0.79-0.33,1.07-1.464,0.626-2.527c-0.002-0.004-0.003-0.008-0.006-0.012
+												c0.443,0.358,0.902,0.642,1.296,0.793c1.373,0.526,2.921-0.161,3.449-1.534C17.032,10.115,16.345,8.569,14.973,8.04z M12.365,5.264
+												c0.79-0.33,1.634-0.121,1.88,0.465c0.246,0.588-0.198,1.335-0.989,1.667c-0.579,0.242-1.806,0.453-2.517,0.316
+												c-0.031-0.105-0.065-0.209-0.112-0.312c-0.081-0.181-0.183-0.347-0.299-0.499C10.696,6.289,11.763,5.516,12.365,5.264z
+												 M8.111,2.041c0.393-1.021,1.543-1.534,2.565-1.142c1.021,0.393,1.533,1.542,1.142,2.564c-0.326,0.847-1.565,2.364-2.562,2.634
+												C8.997,5.996,8.72,5.943,8.438,5.933C7.675,5.244,7.754,2.971,8.111,2.041z M5.33,2.195C5.919,1.95,6.666,2.393,6.997,3.184
+												C7.064,3.345,7.128,3.555,7.184,3.79c0.008,0.472,0.064,0.947,0.174,1.379c0,0.515-0.092,0.942-0.344,1.047
+												c-0.588,0.246-1.817-1.35-2.148-2.141C4.534,3.284,4.743,2.441,5.33,2.195z M1.957,8.244C0.935,7.853,0.423,6.702,0.816,5.68
+												c0.392-1.021,1.542-1.534,2.563-1.141c0.992,0.38,2.894,2.008,2.653,3.039C6.016,7.624,6,7.67,5.986,7.717
+												C5.534,8.692,2.964,8.631,1.957,8.244z M7.877,14.642c-0.392,1.021-1.543,1.533-2.565,1.141c-1.021-0.392-1.534-1.543-1.142-2.564
+												c0.368-0.958,1.905-2.776,2.937-2.676c0.14,0.083,0.288,0.15,0.439,0.203C8.312,11.434,8.235,13.708,7.877,14.642z M6.644,9.174
+												C6.223,8.226,6.649,7.111,7.598,6.691c0.949-0.423,2.063,0.004,2.485,0.954c0.407,0.917,0.015,1.985-0.871,2.436H9.21
+												c-0.005,0.002-0.009,0.007-0.015,0.01c-0.023,0.011-0.043,0.027-0.067,0.038C8.181,10.551,7.066,10.122,6.644,9.174z
+												 M10.936,14.277c-0.587,0.244-1.333-0.199-1.665-0.991c-0.237-0.567-0.445-1.754-0.326-2.47c0.145-0.034,0.287-0.081,0.427-0.142
+												c0.168-0.075,0.321-0.166,0.463-0.271c0.601,0.403,1.325,1.412,1.567,1.992C11.733,13.186,11.524,14.029,10.936,14.277z
+												 M15.868,11.243c-0.393,1.021-1.542,1.534-2.564,1.143c-0.986-0.38-2.877-1.995-2.655-3.026c0.026-0.063,0.05-0.126,0.07-0.19
+												c0.5-0.936,3.015-0.872,4.009-0.491C15.748,9.07,16.261,10.223,15.868,11.243z"/>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										<g>
+										</g>
+										</svg></span>
+										<span class="iconContent__wrap">162-800-800</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="skype:{!CONTACT_SKYPE!}">
+									<span class="iconContent">
+										<span class="iconSvg iconSvg-skype"></span>
+										<span class="iconContent__wrap">{!CONTACT_SKYPE!}</span>
+									</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</footer>
+                                <div id="result_hidden"></div>
+			</div>
+		</div>
+					<script src="https://espays.com/templates/loadpays/js/libs/jquery.min.js"></script>
+				<script src="https://espays.com/templates/loadpays/js/libs/popper.min.js"></script>
+		<script src="https://espays.com/templates/loadpays/js/libs/jquery.maskedinput.min.js"></script>
+		<script src="https://espays.com/templates/loadpays/js/libs/bootstrap.min.js"></script>
+		<script src="https://espays.com/templates/loadpays/js/libs/jquery.nice-select.min.js"></script>
+		<script src="https://espays.com/templates/loadpays/js/libs/jquery.mousewheel.min.js"></script>
+		<script src="https://espays.com/templates/loadpays/js/libs/jquery.mCustomScrollbar.concat.min.js"></script>
+		<script src="https://espays.com/templates/loadpays/js/libs/moment.min.js"></script>
+		<script src="https://espays.com/templates/loadpays/js/libs/jquery.daterangepicker.min.js"></script>
+		<!-- <script src="https://espays.com/templates/loadpays/js/libs/daterangepicker.js"></script> -->
+		<script src="https://espays.com/templates/loadpays/js/libs/clipboard.min.js"></script>
+		<script src="https://espays.com/templates/loadpays/js/libs/select2.min.js"></script>
+		<script src="https://espays.com/templates/loadpays/js/libs/jquery.fancybox.min.js"></script>
+		<script src="https://espays.com/templates/loadpays/js/libs/swiper.min.js"></script>
+		<script src="https://www.gstatic.com/charts/loader.js"></script>
+		<script>
+			//всплывающее скрытое окно
+				function result_hidden(data) {
+						$("#submenu").after($('#result_hidden'));
+						$('#result_hidden').fadeIn();
+						$('#result_hidden').html(' ');
+						$('#result_hidden').append('<div class="ok"></div>');
+						$('#result_hidden div.ok').html(data);
+						setTimeout(function(){ $('#result_hidden').delay(2000).fadeOut(); }, 2000);
+				}
+				//всплывающее окно с результатом
+				function result(data,tim=0) {
+						$('#result').fadeIn();
+						$('#result').append('<div class="error2"></div>');
+						$('#result .error2').html(data);
+						setTimeout(function(){ $('#result').delay(2000).fadeOut(); }, tim);
+				}
+
+				$('.const').on('click', function () {
+					$(this).next('.parametr-info').slideToggle('slow');
+					$(this).find('.iconSvg').toggleClass('open');
+				});
+
+
+				function copytext(el) {
+				  	var $tmp = $("<textarea>");
+				    $("body").append($tmp);
+				    $tmp.val($(el).data('url')).select();
+				    document.execCommand("copy");
+				    $tmp.remove();
+				    console.log(0);
+				}
+
+				/*
+                $('.projects .nav-item .nav-link').on('click', function () {
+                	var ids = $(this).data('ids');
+                	console.log(ids);
+                	$('.promo_link_actions select').val(ids);
+                	$("form.filtertheme").submit();
+				});
+                */
+    </script>
+		<script src="https://espays.com/templates/loadpays/js/main.js"></script>
+	</body>
+</html>
