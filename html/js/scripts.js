@@ -1,10 +1,30 @@
 
 $(document).ready(function() {
-	//Coundown
-	$('.countdown').downCount({
-        date: '09/25/2020 12:00:00',
-        offset: +10
-  });
+	// Countdown
+    const countdownDate = new Date('11/15/2024 00:00:00').getTime();
+    const offset = +0 * 60 * 60 * 1000; // Convert offset to milliseconds (if using hours)
+    
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = countdownDate - now + offset;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        $('.countdown__days .count').text(days < 10 ? '0' + days : days);
+        $('.countdown__hours .count').text(hours < 10 ? '0' + hours : hours);
+        $('.countdown__minutes .count').text(minutes < 10 ? '0' + minutes : minutes);
+        $('.countdown__seconds .count').text(seconds < 10 ? '0' + seconds : seconds);
+
+        if (distance < 0) {
+            clearInterval(countdownInterval);
+            $('.countdown').html('<p>Chegou o grande dia!</p>');
+        }
+    }
+
+    const countdownInterval = setInterval(updateCountdown, 1000);
   // Scroll to ID  
   function scrollToId(str) {
         $(str + '[href*="#"]').on('click', function(e) {
@@ -185,86 +205,85 @@ $(document).ready(function() {
 
     $('.swiper-slide-active').siblings('.swiper-slide').css('margin-right', '32px');
 
-  //Init map
+    // Inicializa o mapa
     (function initeMap() {
-
         let ceremonyMap,
-        receptionMap;
+            receptionMap;
 
-        $('.styleswitch').on('click', function() {
+        // Atualiza o mapa quando há uma troca de estilo
+        $('.styleswitch').on('click', function () {
             $('.map').empty();
             init();
         });
 
         ymaps.ready(init);
-    
-        function init () {
 
-            //Switch map icon
+        function init() {
+
+            // Define o ícone padrão baseado no tema do site
             let defaultIcon = 'img/map/icon--' + $('head link[id="skins"]').attr('data-color') + '.svg';
             console.log(defaultIcon);
 
-            //Ceremony address map
+            // Inicialização do mapa da cerimônia
             ceremonyMap = new ymaps.Map('address__map--ceremony', {
-                    center: [40.760873, -73.976398],
-                    zoom: 17,
-                    controls: []
-                }, {
-                    searchControlProvider: 'yandex#search'
-                })
+                center: [-11.0579181, -37.10935], // Coordenadas centralizadas no Espaço Villa Ricca
+                zoom: 17, // Zoom alto para ver detalhes das ruas
+                controls: ['zoomControl', 'typeSelector', 'geolocationControl', 'trafficControl'] // Controles para navegação e detalhes
+            }, {
+                searchControlProvider: 'yandex#search'
+            });
 
-                MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-                    '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-                ),
-                
-                myPlacemark = new ymaps.Placemark(ceremonyMap.getCenter(), {
-                    hintContent: 'Mark',
-                    balloonContent: 'Mark'
-                }, {
-                    iconLayout: 'default#image',
-                    iconImageHref: defaultIcon,
-                    iconImageSize: [63, 83],
-                })
+            // Layout do conteúdo do ícone personalizado
+            let MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+                '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+            );
 
-                ceremonyMap.panes.get('ground').getElement().style.filter = 'grayscale(100%)';
-            
-            ceremonyMap.geoObjects
-                .add(myPlacemark);
+            // Personalização do placemark (marcador) para Espaço Villa Ricca
+            let myPlacemarkCeremony = new ymaps.Placemark([-11.0579181, -37.10935], { // Certifique-se de que estas são as coordenadas exatas do local
+                hintContent: 'Espaço Villa Ricca', // Dica ao passar o mouse
+                balloonContent: '<strong>Espaço Villa Ricca</strong><br>Endereço completo e detalhes aqui.' // Conteúdo do balão
+            }, {
+                iconLayout: 'default#image',
+                iconImageHref: defaultIcon, // Usando ícone padrão, altere se necessário
+                iconImageSize: [63, 83], // Tamanho do ícone
+                iconImageOffset: [-31, -83] // Ajuste para centralizar o ícone
+            });
 
-            //END ceremony address map
+            // Aplicar filtro em escala de cinza ao fundo do mapa da cerimônia
+            ceremonyMap.panes.get('ground').getElement().style.filter = 'grayscale(100%)';
 
+            // Adicionar o placemark ao mapa da cerimônia
+            ceremonyMap.geoObjects.add(myPlacemarkCeremony);
 
-            //Reception address map
+            // Inicialização do mapa da recepção
             receptionMap = new ymaps.Map('address__map--reception', {
-                    center: [40.760873, -73.976398],
-                    zoom: 17,
-                    controls: []
-                }, {
-                    searchControlProvider: 'yandex#search'
-                });
+                center: [40.760873, -73.976398], // Ajuste as coordenadas para o local exato da recepção
+                zoom: 17, // Zoom alto para ver detalhes das ruas
+                controls: ['zoomControl', 'typeSelector', 'geolocationControl', 'trafficControl'] // Adiciona controles para navegação e detalhes
+            }, {
+                searchControlProvider: 'yandex#search'
+            });
 
-                MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-                    '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-                ),
-                
-                myPlacemark = new ymaps.Placemark(receptionMap.getCenter(), {
-                    hintContent: 'Mark',
-                    balloonContent: 'Mark'
-                }, {
-                    iconLayout: 'default#image',
-                    iconImageHref: defaultIcon,
-                    iconImageSize: [63, 83],
-                }),
+            // Personalização do placemark (marcador) para o local da recepção
+            let myPlacemarkReception = new ymaps.Placemark(receptionMap.getCenter(), {
+                hintContent: 'Local da Recepção', // Alterado para indicar o local exato
+                balloonContent: '<strong>Local da Recepção</strong><br>Endereço completo e detalhes aqui.' // Detalhes do balão
+            }, {
+                iconLayout: 'default#image',
+                iconImageHref: defaultIcon, // Usando ícone padrão
+                iconImageSize: [63, 83],
+                iconImageOffset: [-31, -83] // Ajuste para centralizar o ícone
+            });
 
-                receptionMap.panes.get('ground').getElement().style.filter = 'grayscale(80%)';
+            // Aplicar filtro em escala de cinza ao fundo do mapa da recepção
+            receptionMap.panes.get('ground').getElement().style.filter = 'grayscale(80%)';
 
-            receptionMap.geoObjects
-                .add(myPlacemark);
-            
-            //END reception address map
+            // Adicionar o placemark ao mapa da recepção
+            receptionMap.geoObjects.add(myPlacemarkReception);
         }
 
     }());
+
 
 
 });

@@ -68,12 +68,28 @@ font-family: 'Poppins'; (text)
   color: #666; }
 
 ::-moz-selection {
-  background-color: #FAF0FF;
+  background-color: #fafafa;
   color: #fff; }
 
 ::selection {
-  background-color: #FAF0FF;
+  background-color: #fafafa;
   color: #fff; }
+
+p, span, input, time {
+  font-family: 'Arapey', serif;
+}
+
+.venues__card-data {
+  font-size: 20px;
+}
+
+h1, h2, h3 {
+  font-family: 'Noto Serif Display', serif;
+}
+
+.countdown p {
+  font-size: 25px;
+}
 
 body {
   font-size: 16px;
@@ -135,7 +151,7 @@ a:hover {
   line-height: 20px;
   background: none;
   text-transform: uppercase;
-  background-color: #4F3566;
+  background-color: #3b3937;
   border: none;
   display: block;
   -webkit-transition: all .3s ease-out;
@@ -163,12 +179,12 @@ a:hover {
     background-color: #402657;
     color: #fff; }
   .btn:focus {
-    background-color: #4F3566;
+    background-color: #3b3937;
     color: #fff;
     border: 2px solid #F5A8A8;
     color: #fff; }
   .btn:disabled {
-    background-color: #CBBADB;
+    background-color: #3b3937;
     color: #fff; }
 
 .active.custom-file-control:before, .btn.active, .btn.focus, .btn:active, .btn:focus, .btn:hover, .custom-file-control:active:before, .custom-file-control:focus:before, .custom-file-control:hover:before, .focus.custom-file-control:before, .open > .btn.dropdown-toggle, .open > .dropdown-toggle.custom-file-control:before {
@@ -181,7 +197,7 @@ a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #4F3566;
+  background: #3b3937;
   z-index: 10;
   display: none; }
 
@@ -216,7 +232,7 @@ a:hover {
   text-transform: uppercase;
   white-space: nowrap; }
   .mobile-navigation__link .mobile-navigation__link:hover {
-    color: #faf0ff; }
+    color: #fafafa; }
 
 .mobile-menu__close {
   width: 40px;
@@ -229,10 +245,10 @@ a:hover {
   padding: 25px; }
 
 .mobile-menu__close:hover::after {
-  background-color: #faf0ff; }
+  background-color: #fafafa; }
 
 .mobile-menu__close:hover::before {
-  background-color: #faf0ff; }
+  background-color: #fafafa; }
 
 .mobile-menu__close::after, .mobile-menu__close::before {
   content: "";
@@ -261,7 +277,7 @@ a:hover {
   border: none;
   padding: 12px 40px;
   padding-right: 64px;
-  background-color: #4F3566;
+  background-color: #3b3937;
   font-family: "Marсellus-Regular", serif;
   font-size: 14px;
   line-height: 20px;
@@ -289,11 +305,11 @@ a:hover {
   background-color: #402657; }
 
 .btn:focus {
-  background-color: #4F3566;
+  background-color: #3b3937;
   border: 2px solid #F5A8A8; }
 
 .btn:disabled {
-  background-color: #CBBADB; }
+  background-color: #3b3937; }
 
 .to-top {
   position: fixed;
@@ -430,7 +446,7 @@ ul.color_schemes li {
   background: #cccc00; }
 
 .styleswitch.color-7 {
-  background: #4F3566; }
+  background: #3b3937; }
 
 .styleswitch.color-8 {
   background: #ff5411; }
@@ -481,7 +497,7 @@ ul.color_schemes li {
     padding-right: 0; }
 
 .header__menu-link {
-  font-family: "Marcellus", serif;
+  font-family: 'Noto Serif Display', serif;
   font-size: 13px;
   line-height: 20px;
   color: #fff;
@@ -546,7 +562,7 @@ ul.color_schemes li {
   padding: 88px 132px 72px 132px; }
 
 .header__title {
-  font-family: "Marcellus", serif;
+  font-family: 'Prata', serif;
   font-size: 92px;
   line-height: 132px;
   padding-bottom: 16px;
@@ -554,11 +570,10 @@ ul.color_schemes li {
   white-space: nowrap; }
 
 .header__subtitle {
-  font-family: "Playfair Display", serif;
+  font-family: 'Lora', serif;
   font-weight: 400;
   font-size: 22px;
-  line-height: 32px;
-  text-transform: capitalize; }
+  line-height: 32px; }
 
 .header__menu-item {
   opacity: 1;
@@ -612,7 +627,7 @@ ul.color_schemes li {
 /*1.1 END Header media*/
 /*1.1.1 Countdown*/
 .header__countdown {
-  background-color: #FAF0FF;
+  background-color: #fafafa;
   position: absolute;
   left: 50%;
   bottom: -34%;
@@ -625,9 +640,9 @@ ul.color_schemes li {
   font-size: 32px;
   line-height: 44px;
   text-align: center;
-  font-family: "Playfair Display", serif;
+  font-family: 'Lora', serif;
   font-weight: 700;
-  color: #4F3566;
+  color: #3b3937;
   text-transform: capitalize;
   white-space: nowrap;
   margin-bottom: 32px; }
@@ -650,25 +665,25 @@ ul.color_schemes li {
 
 .countdown__element {
   padding: 10px 25px;
-  border: 1px solid #CBBADB; }
+  border: 1px solid #3b3937; }
   .countdown__element span {
     display: block;
     text-align: center; }
 
 .countdown__element .count {
-  font-family: "Playfair Display", serif;
+  font-family: 'Lora', serif;
   font-weight: 700;
   font-size: 32px;
   line-height: 44px;
-  color: #4F3566;
+  color: #3b3937;
   margin-bottom: 4px; }
 
 .countdown__element .label {
-  font-family: "Playfair Display", serif;
+  font-family: 'Lora', serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
-  color: #4F3566; }
+  color: #3b3937; }
 
 /*1.1.1 END Countdown*/
 /*1.1.1 Countdown media*/
@@ -699,12 +714,11 @@ ul.color_schemes li {
     position: relative; }
 
 .s-title {
-  font-family: "Marcellus", serif;
   font-size: 56px;
   line-height: 88px;
   text-align: center;
   text-transform: capitalize;
-  color: #4F3566; }
+  color: #3b3937; }
 
 .couple .s-title {
   margin-bottom: 88px; }
@@ -724,7 +738,7 @@ ul.color_schemes li {
     position: absolute;
     width: 112px;
     height: 1px;
-    background-color: #4F3566;
+    background-color: #3b3937;
     bottom: 0;
     left: 0;
     -webkit-transform: translateX(-50%);
@@ -732,18 +746,17 @@ ul.color_schemes li {
             transform: translateX(-50%); }
 
 .couple__title {
-  font-family: "Playfair Display", serif;
   font-weight: 700;
   font-size: 32px;
   line-height: 44px;
-  color: #4F3566;
+  color: #3b3937;
   text-transform: uppercase; }
 
 .couple__subtitle {
   font-family: "Lora", serif;
   font-size: 24px;
   line-height: 36px;
-  color: #4F3566; }
+  color: #3b3937; }
 
 .couple__text {
   max-width: 384px; }
@@ -756,7 +769,6 @@ ul.color_schemes li {
   margin-right: 224px; }
 
 .couple__descr {
-  font-family: "Playfair Display", serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -787,23 +799,32 @@ ul.color_schemes li {
 .couple__image {
   width: 352px;
   height: 432px;
-  border: 8px solid #4F3566;
+  border: 8px solid #3b3937;
   position: relative; }
   .couple__image::after {
     content: "";
     position: absolute;
+    top: 0;
     width: 100%;
-    height: 100%; }
+    height: 100%;
+    background-size: contain; /* Ajusta a imagem para caber dentro do contêiner sem cortar */
+    background-position: center; /* Centraliza a imagem dentro do contêiner */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+  }
 
 .couple__image-groom--left::after {
   top: -60px;
   left: 60px;
   background-image: url("http://placehold.it/352x432"); }
 
-.couple__image-bride--right::after {
-  top: -60px;
-  right: 60px;
-  background-image: url("http://placehold.it/352x432"); }
+  .couple__image-bride--right::after {
+    top: -50px; /* Ajuste o top para que a imagem comece do topo */
+    right: 50px; /* Ajuste o right para que a imagem comece da direita */
+    background-image: url("../img/em_caninde.jpeg"); /* Caminho correto para a imagem */
+    background-size: contain; /* Ajusta a imagem para caber dentro do contêiner sem cortar */
+    background-position: center; /* Centraliza a imagem dentro do contêiner */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+  }
 
 /*1.2 END Couple*/
 /*1.2 Couple media*/
@@ -899,7 +920,7 @@ ul.color_schemes li {
   left: 0;
   width: 44.44%;
   height: 100%;
-  background-color: #FAF0FF; }
+  background-color: #fafafa; }
 
 .story__slide {
   display: -webkit-box !important;
@@ -925,7 +946,7 @@ ul.color_schemes li {
     position: absolute;
     width: 112px;
     height: 1px;
-    background-color: #4F3566;
+    background-color: #3b3937;
     bottom: 0;
     left: 0;
     -webkit-transform: translateX(-50%);
@@ -1244,7 +1265,7 @@ ul.color_schemes li {
 
 .venues__card {
   width: 560px;
-  border: 8px solid #4F3566; }
+  border: 8px solid #3b3937; }
 
 .address__map {
   width: 576px;
@@ -1303,7 +1324,7 @@ ul.color_schemes li {
     position: absolute;
     width: 112px;
     height: 1px;
-    background-color: #4F3566;
+    background-color: #3b3937;
     bottom: 0;
     left: 0;
     -webkit-transform: translateX(-50%);
@@ -1344,7 +1365,7 @@ ul.color_schemes li {
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
-  color: #4F3566; }
+  color: #3b3937; }
 
 .venues__card {
   max-width: 305px; }
@@ -1435,7 +1456,7 @@ ul.color_schemes li {
 .rvsp {
   padding-top: 96px;
   padding-bottom: 144px;
-  background-color: #FAF0FF;
+  background-color: #fafafa;
   position: relative; }
   .rvsp::before {
     content: "";
@@ -1477,17 +1498,15 @@ ul.color_schemes li {
   margin-right: 15px; }
 
 .rvsp__title {
-  font-family: "Marcellus", serif;
   font-size: 56px;
   line-height: 88px;
-  color: #4F3566; }
+  color: #3b3937; }
 
 .rvsp__subtitle {
-  font-family: "Playfair Display", serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: #4F3566;
+  color: #3b3937;
   margin-bottom: 16px;
   display: block; }
 
@@ -1508,21 +1527,21 @@ ul.color_schemes li {
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
-  color: #4F3566; }
+  color: #3b3937; }
 
 .is-focused [class*=" bmd-label"], .is-focused [class^=bmd-label] {
-  color: #4F3566;
+  color: #3b3937;
   font-size: 8px;
   line-height: 16px;
   opacity: 0.7; }
 
 .custom-file-control, .form-control, .is-focused .custom-file-control, .is-focused .form-control {
-  background-image: -o-linear-gradient(bottom, #4F3566 0px, rgba(79, 53, 102, 0) 0), -o-linear-gradient(bottom, #4f3566 1px, transparent 0);
-  background-image: linear-gradient(0deg, #4F3566 0px, rgba(79, 53, 102, 0) 0), linear-gradient(0deg, #4f3566 1px, transparent 0); }
+  background-image: -o-linear-gradient(bottom, #3b3937 0px, rgba(79, 53, 102, 0) 0), -o-linear-gradient(bottom, #3b3937 1px, transparent 0);
+  background-image: linear-gradient(0deg, #3b3937 0px, rgba(79, 53, 102, 0) 0), linear-gradient(0deg, #3b3937 1px, transparent 0); }
 
 .form__select {
   height: 95%;
-  border-bottom: 1px solid #4F3566;
+  border-bottom: 1px solid #3b3937;
   width: 100%;
   cursor: pointer; }
 
@@ -1577,7 +1596,7 @@ ul.color_schemes li {
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
   .dropdown__select:hover {
-    background-color: #CBBADB; }
+    background-color: #3b3937; }
 
 .form-group--select::before {
   content: "";
@@ -1586,7 +1605,7 @@ ul.color_schemes li {
   right: 5px;
   width: 8px;
   height: 1px;
-  background-color: #4F3566;
+  background-color: #3b3937;
   -webkit-transform: translateY(-50%) rotate(45deg);
       -ms-transform: translateY(-50%) rotate(45deg);
           transform: translateY(-50%) rotate(45deg); }
@@ -1598,7 +1617,7 @@ ul.color_schemes li {
   right: 0;
   width: 8px;
   height: 1px;
-  background-color: #4F3566;
+  background-color: #3b3937;
   -webkit-transform: translateY(-50%) rotate(-45deg);
       -ms-transform: translateY(-50%) rotate(-45deg);
           transform: translateY(-50%) rotate(-45deg); }
@@ -1676,7 +1695,7 @@ ul.color_schemes li {
     right: 5px;
     width: 8px;
     height: 1px;
-    background-color: #4F3566;
+    background-color: #3b3937;
     -webkit-transform: translateY(-50%) rotate(45deg);
         -ms-transform: translateY(-50%) rotate(45deg);
             transform: translateY(-50%) rotate(45deg); }
@@ -1687,7 +1706,7 @@ ul.color_schemes li {
     right: 0;
     width: 8px;
     height: 1px;
-    background-color: #4F3566;
+    background-color: #3b3937;
     -webkit-transform: translateY(-50%) rotate(-45deg);
         -ms-transform: translateY(-50%) rotate(-45deg);
             transform: translateY(-50%) rotate(-45deg); } }
@@ -1707,7 +1726,6 @@ ul.color_schemes li {
 /* 1.6 END RVSP media*/
 /*1.7 Support*/
 .support__title {
-  font-family: "Playfair Display", serif;
   font-weight: 700;
   font-size: 52px;
   line-height: 78px;
@@ -1725,7 +1743,7 @@ ul.color_schemes li {
             transform: translateX(50%);
     width: 192px;
     height: 1px;
-    background-color: #4F3566; }
+    background-color: #3b3937; }
 
 .support__btn-sescr {
   font-size: 16px;
@@ -1801,7 +1819,7 @@ ul.color_schemes li {
 .footer {
   min-height: 128px;
   width: 100%;
-  background-color: #FAF0FF;
+  background-color: #fafafa;
   position: relative; }
 
 .footer__content {
@@ -1832,17 +1850,16 @@ ul.color_schemes li {
 
 .footer__name {
   display: block;
-  font-family: "Marcellus", serif;
   font-size: 56px;
   line-height: 88px;
-  color: #4F3566;
+  color: #3b3937;
   position: relative; }
 
 .footer__image {
   position: relative; }
 
 .footer__image::after {
-  content: "25 /09 /2020";
+  content: "15 . 11 . 2024";
   position: absolute;
   bottom: -38px;
   left: 50%;
@@ -1852,7 +1869,7 @@ ul.color_schemes li {
   font-family: "Playfair Display", serif;
   font-size: 20px;
   line-height: 32px;
-  color: #4F3566;
+  color: #3b3937;
   white-space: nowrap; }
 
 /* 1.8 END Footer */
