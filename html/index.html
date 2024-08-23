@@ -405,6 +405,19 @@
       color: #555;
     }
 
+    /* Estilo para presente indisponível */
+    .unavailable {
+      background-color: #f0f0f0;
+      color: #999;
+      box-shadow: none;
+      opacity: 0.7;
+    }
+
+    .unavailable h3,
+    .unavailable p {
+      color: #999;
+    }
+
     /* Botão de presentear */
     .present-btn {
       margin-top: auto; /* Empurra o botão para o final */
@@ -420,10 +433,6 @@
     .present-btn:disabled {
       background-color: #aaa;
       cursor: not-allowed;
-    }
-
-    .present-btn:hover:not(:disabled) {
-      background-color: #4cae4c;
     }
 
     /* Estilo da paginação */
@@ -487,17 +496,12 @@
     }
 
     .modal-content .btn {
-      background-color: #5cb85c;
       color: white;
       padding: 10px 15px;
       border: none;
       border-radius: 5px;
       cursor: pointer;
       font-size: 1rem;
-    }
-
-    .modal-content .btn:hover {
-      background-color: #4cae4c;
     }
 
     .close {
@@ -539,7 +543,6 @@
         padding-bottom: 15%;
       }
     }
-
   </style>
 
   <script>
@@ -565,21 +568,36 @@
     function renderGifts(page) {
       const presentList = document.getElementById('present-list');
       presentList.innerHTML = ''; // Limpa os presentes anteriores
+
+      // Ordena os presentes, colocando os disponíveis primeiro
+      const sortedGifts = [...gifts].sort((a, b) => (a[3] === 'Não') - (b[3] === 'Não'));
+
       const start = (page - 1) * itemsPerPage;
       const end = start + itemsPerPage;
-      const giftsToShow = gifts.slice(start, end);
+      const giftsToShow = sortedGifts.slice(start, end);
 
       giftsToShow.forEach(gift => {
         const [name, photo, value, available] = gift;
         const giftBox = document.createElement('div');
         giftBox.classList.add('present-box');
-        giftBox.innerHTML = `
-          <img src="${photo}" alt="${name}">
-          <h3>${name}</h3>
-          <p>Valor: R$ ${value}</p>
-          <p>${available === 'Não' ? '<strong>Acabou :(</strong>' : ''}</p>
-          <button class="btn present-btn" ${available === 'Não' ? 'disabled' : ''} onclick="openDonationModal('${name}')">Presentear</button>
-        `;
+
+        // Verifica se o presente está indisponível e adiciona a classe unavailable
+        if (available === 'Não') {
+          giftBox.classList.add('unavailable');
+          giftBox.innerHTML = `
+            <img src="${photo}" alt="${name}">
+            <h3>${name}</h3>
+            <p>Valor: R$ ${value}</p>
+            <p><strong>Acabou :(</strong></p>
+          `;
+        } else {
+          giftBox.innerHTML = `
+            <img src="${photo}" alt="${name}">
+            <h3>${name}</h3>
+            <p>Valor: R$ ${value}</p>
+            <button class="btn present-btn" onclick="openDonationModal('${name}')">Presentear</button>
+          `;
+        }
         presentList.appendChild(giftBox);
       });
 
@@ -682,6 +700,7 @@
     // Carrega a lista de presentes ao iniciar
     fetchGifts();
   </script>
+
   	
   	<!-- To top botton -->
     <div class="to-top bg--colored"></div>
