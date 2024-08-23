@@ -213,7 +213,7 @@
     </section>
   	<!-- END Section: Venues -->
   	
-  	<!-- Section: Rvsp -->
+  	<!-- Section: RSVP -->
     <section class="rvsp" id="rvsp">
       <div class="container">
         <div class="rvsp__forrm-wrap">
@@ -260,68 +260,428 @@
     </section>
 
     <script>
-      document.querySelector('.rvsp__form').addEventListener('submit', function(e) {
-        e.preventDefault(); // Evita o comportamento padrão do form
+    document.querySelector('.rvsp__form').addEventListener('submit', function(e) {
+      e.preventDefault();
 
-        // Coleta os dados do formulário
-        var data = {
-          name: document.getElementById('name').value,
-          email: document.getElementById('mail').value,
-          phone: document.getElementById('telefone').value,
-          presence: document.querySelector('.selected__item').textContent || 'Não informado',
-          message: document.getElementById('textarea').value
-        };
+      var currentDateTime = new Date();
+      var dateTime = currentDateTime.toLocaleDateString() + ' ' + currentDateTime.toLocaleTimeString();
 
-        // Verifica se os campos obrigatórios estão preenchidos
-        if (!data.name || !data.email || !data.phone || data.presence === 'Não informado') {
-          Swal.fire({
-            icon: 'warning',
-            title: 'Ops...',
-            text: 'Por favor, preencha todos os campos obrigatórios.'
-          });
-          return;
-        }
+      var data = {
+        action: 'confirmPresence',
+        name: document.getElementById('name').value,
+        email: document.getElementById('mail').value,
+        phone: document.getElementById('telefone').value,
+        presence: document.querySelector('.selected__item').textContent || 'Não informado',
+        message: document.getElementById('textarea').value,
+        dateTime: dateTime
+      };
 
-        // Envia os dados via POST para o Google Apps Script
-        fetch('https://script.google.com/macros/s/AKfycby9sMUFUd-JaOBkeBMcio9w3pBN9k6BdrEdj8wtSMEJq599wIDerNQpR8WEeqfo-6ko/exec', {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(data)
-        }).then(response => {
-          // Popup de sucesso com SweetAlert
+      if (!data.name || !data.email || !data.phone || data.presence === 'Não informado') {
+        Swal.fire({
+          icon: 'warning',
+          title: 'Ops...',
+          text: 'Por favor, preencha todos os campos obrigatórios.'
+        });
+        return;
+      }
+
+      fetch('https://script.google.com/macros/s/AKfycbxxekmfi4EbtsE5wrXZi_j4XFTkEDq_NdlIRJPktg65zQJAlAZS_CZ8MzEZnYpZB3U/exec', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      })
+      .then(response => response.json())
+      .then(result => {
+        if (result.status === 'success') {
           Swal.fire({
             icon: 'success',
             title: 'Confirmação enviada!',
-            text: 'Obrigado por confirmar sua presença!'
+            text: result.message
           });
-        }).catch(error => {
-          // Popup de erro com SweetAlert
+        } else {
+          Swal.fire({
+            icon: 'error',
+            title: 'Erro!',
+            text: result.message
+          });
+        }
+      })
+      .catch(error => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Erro!',
+          text: 'Ocorreu um erro ao enviar a confirmação. Por favor, tente novamente mais tarde.'
+        });
+      });
+    });
+  </script>
+  <!-- END Section: Rvsp -->
+
+  	
+  <!-- Section: Presents -->
+  <section class="presents" id="presents">
+    <div class="container">
+      <h2 class="presents__title">Presentes</h2>
+      <div id="present-list" class="present-grid">
+        <!-- Presentes serão carregados aqui -->
+      </div>
+      <div class="pagination">
+        <button id="prev-page" class="btn">Anterior</button>
+        <button id="next-page" class="btn">Próximo</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal para doação -->
+  <div id="donation-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="gift-name"></h2>
+      <p>Por favor, preencha o nome e confirme sua doação:</p>
+      <input type="text" id="donor-name" placeholder="Seu nome" required>
+      <p>Dados para transferência:</p>
+      <p>Conta: 1234-5678</p>
+      <button id="confirm-donation" class="btn">Confirmar Doação</button>
+    </div>
+  </div>
+
+  <style>
+    /* Estilo geral da seção */
+    .presents {
+      padding: 20px 0;
+      background-color: #f9f9f9;
+      padding-top: 10%;
+      padding-bottom: 15%;
+    }
+
+    .presents__title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    /* Grid para exibir os presentes */
+    .present-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* Grid 3x3 para telas grandes */
+      gap: 20px;
+      justify-items: center;
+    }
+
+    /* Estilo das caixinhas de presentes */
+    .present-box {
+      width: 100%;
+      max-width: 300px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .present-box img {
+      width: 100%;
+      max-height: 200px; /* Define uma altura máxima fixa */
+      object-fit: contain; /* A imagem é contida na área, mantendo a proporção */
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+
+    .present-box h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .present-box p {
+      font-size: 1rem;
+      margin-bottom: 10px;
+      color: #555;
+    }
+
+    /* Botão de presentear */
+    .present-btn {
+      margin-top: auto; /* Empurra o botão para o final */
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .present-btn:disabled {
+      background-color: #aaa;
+      cursor: not-allowed;
+    }
+
+    .present-btn:hover:not(:disabled) {
+      background-color: #4cae4c;
+    }
+
+    /* Estilo da paginação */
+    .pagination {
+      margin-top: 20px;
+      text-align: center;
+      padding-top: 5%;
+      justify-content: center;
+    }
+
+    .pagination .btn {
+      margin: 0 5px;
+      padding: 10px 20px;
+      background-color: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .pagination .btn:hover {
+      background-color: #555;
+    }
+
+    /* Modal de doação */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .modal-content h2 {
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+      color: #333;
+    }
+
+    .modal-content input {
+      padding: 10px;
+      width: 80%;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    .modal-content .btn {
+      background-color: #5cb85c;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .modal-content .btn:hover {
+      background-color: #4cae4c;
+    }
+
+    .close {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Media Queries para Responsividade */
+
+    /* Tablets (médio) */
+    @media (max-width: 768px) {
+      .present-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas para telas médias */
+      }
+
+      .present-box {
+        max-width: 250px; /* Ajusta o tamanho do bloco */
+      }
+    }
+
+    /* Celulares (pequeno) */
+    @media (max-width: 480px) {
+      .present-grid {
+        grid-template-columns: 1fr; /* 1 coluna para telas pequenas */
+      }
+
+      .present-box {
+        max-width: 70%; /* Ajusta para ocupar toda a largura disponível */
+      }
+
+      .pagination .btn {
+        padding: 10px 15px; /* Ajuste no tamanho dos botões de paginação */
+      }
+
+      .pagination {
+        padding-bottom: 15%;
+      }
+    }
+
+  </style>
+
+  <script>
+    let currentPage = 1;
+    const itemsPerPage = 9;
+    let gifts = [];
+
+    // Função para buscar presentes da planilha via Apps Script
+    function fetchGifts() {
+      fetch('https://script.google.com/macros/s/AKfycbxxekmfi4EbtsE5wrXZi_j4XFTkEDq_NdlIRJPktg65zQJAlAZS_CZ8MzEZnYpZB3U/exec?action=getPresents')
+        .then(response => response.json())
+        .then(data => {
+          gifts = data;
+          renderGifts(currentPage);
+        })
+        .catch(error => {
+          console.error('Erro ao buscar presentes:', error);
+          alert('Erro ao carregar a lista de presentes.');
+        });
+    }
+
+    // Renderiza os presentes na página
+    function renderGifts(page) {
+      const presentList = document.getElementById('present-list');
+      presentList.innerHTML = ''; // Limpa os presentes anteriores
+      const start = (page - 1) * itemsPerPage;
+      const end = start + itemsPerPage;
+      const giftsToShow = gifts.slice(start, end);
+
+      giftsToShow.forEach(gift => {
+        const [name, photo, value, available] = gift;
+        const giftBox = document.createElement('div');
+        giftBox.classList.add('present-box');
+        giftBox.innerHTML = `
+          <img src="${photo}" alt="${name}">
+          <h3>${name}</h3>
+          <p>Valor: R$ ${value}</p>
+          <p>${available === 'Não' ? '<strong>Acabou :(</strong>' : ''}</p>
+          <button class="btn present-btn" ${available === 'Não' ? 'disabled' : ''} onclick="openDonationModal('${name}')">Presentear</button>
+        `;
+        presentList.appendChild(giftBox);
+      });
+
+      updatePagination();
+    }
+
+    // Função para atualizar o estado dos botões de paginação
+    function updatePagination() {
+      const nextPageBtn = document.getElementById('next-page');
+      const prevPageBtn = document.getElementById('prev-page');
+
+      nextPageBtn.disabled = (currentPage * itemsPerPage) >= gifts.length;
+      prevPageBtn.disabled = currentPage === 1;
+    }
+
+    document.getElementById('next-page').addEventListener('click', () => {
+      if ((currentPage * itemsPerPage) < gifts.length) {
+        currentPage++;
+        renderGifts(currentPage);
+      }
+    });
+
+    document.getElementById('prev-page').addEventListener('click', () => {
+      if (currentPage > 1) {
+        currentPage--;
+        renderGifts(currentPage);
+      }
+    });
+
+    // Abre o modal de doação
+    function openDonationModal(giftName) {
+      const modal = document.getElementById('donation-modal');
+      modal.style.display = 'flex';
+      document.getElementById('gift-name').textContent = giftName;
+    }
+
+    // Fecha o modal
+    document.querySelector('.close').addEventListener('click', () => {
+      document.getElementById('donation-modal').style.display = 'none';
+    });
+
+    // Fecha o modal com a tecla Esc
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.getElementById('donation-modal').style.display = 'none';
+      }
+    });
+
+    // Confirmação da doação
+    document.getElementById('confirm-donation').addEventListener('click', () => {
+      const donorName = document.getElementById('donor-name').value;
+      const giftName = document.getElementById('gift-name').textContent;
+
+      if (donorName) {
+        fetch('https://script.google.com/macros/s/AKfycbxxekmfi4EbtsE5wrXZi_j4XFTkEDq_NdlIRJPktg65zQJAlAZS_CZ8MzEZnYpZB3U/exec', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            action: 'updateGiftStatus',
+            presente: giftName,
+            nomeDoador: donorName
+          })
+        })
+        .then(response => response.json())
+        .then(result => {
+          if (result.status === 'success') {
+            Swal.fire({
+              icon: 'success',
+              title: 'Confirmação enviada!',
+              text: result.message
+            });
+            document.getElementById('donation-modal').style.display = 'none';
+            fetchGifts();  // Atualiza a lista de presentes
+          } else {
+            Swal.fire({
+              icon: 'error',
+              title: 'Erro!',
+              text: result.message
+            });
+          }
+        })
+        .catch(error => {
           Swal.fire({
             icon: 'error',
             title: 'Erro!',
             text: 'Ocorreu um erro ao enviar a confirmação. Por favor, tente novamente mais tarde.'
           });
         });
-      });
-    </script>
-    <!-- END Section: Rvsp -->
+      } else {
+        Swal.fire({
+          icon: 'warning',
+          title: 'Nome obrigatório',
+          text: 'Por favor, preencha seu nome antes de confirmar a doação.'
+        });
+      }
+    });
 
-  	
-  	<!-- Section: Support -->
-    <section class="support">
-      <div class="container">
-        <div class="support__title-wrap">
-          <h2 class="support__title">Want to support us?</h2>
-        </div>
-        <div class="support__btn-wrap"><span class="support__btn-sescr">You can make a donation here</span>
-          <button class="btn support__btn bg--colored" type="button">Donate</button>
-        </div>
-      </div>
-    </section>
-  	<!-- END Section: Support -->
+    // Carrega a lista de presentes ao iniciar
+    fetchGifts();
+  </script>
   	
   	<!-- To top botton -->
     <div class="to-top bg--colored"></div>
