@@ -1630,18 +1630,7 @@ ul.color_schemes li {
 
 /* 1.6 END RVSP */
 /* 1.6 RVSP media*/
-@media only screen and (min-width: 1450px) {
-  .rvsp::after {
-    content: "";
-    position: absolute;
-    left: 27%;
-    top: 50%;
-    width: 320px;
-    height: 384px;
-    background-image: url("http://placehold.it/320x384");
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat; } }
+@media only screen and (min-width: 1450px) {}
 
 @media only screen and (max-width: 1200px) {
   .rvsp::after {
