@@ -318,7 +318,7 @@
     </section>
 
     <script>
-      const scriptUrl = 'https://script.google.com/macros/s/AKfycbxIXKDqC0gR0ZeukgQAsFMvrZJmmobvUGRebO-T0ieLmTG_NBl9Oy6DkuJk3hoKyzI/exec';
+      const scriptUrl = 'https://script.google.com/macros/s/AKfycbxTDWGTzS6i7hK1fL-OG2MHNFqMxI369djMU1oL5tz2d6HbFFSdZFtx3HtQt7gCUWqE/exec';
       
       function loadRanking() {
         fetch(scriptUrl)
@@ -367,6 +367,7 @@
         
         let formData = new FormData(e.target);
         let quizData = {
+          action: 'quizCasal',
           nome: nomeValue,
           q1: formData.get('q1'),
           q2: formData.get('q2'),
@@ -555,61 +556,58 @@
     </section>
 
     <script>
-    document.querySelector('.rvsp__form').addEventListener('submit', function(e) {
-      e.preventDefault();
+      document.querySelector('.rvsp__form').addEventListener('submit', function(e) {
+        e.preventDefault(); // Evita o comportamento padrão do form
 
-      var currentDateTime = new Date();
-      var dateTime = currentDateTime.toLocaleDateString() + ' ' + currentDateTime.toLocaleTimeString();
+        var currentDateTime = new Date();
+        var dateTime = currentDateTime.toLocaleDateString() + ' ' + currentDateTime.toLocaleTimeString();
 
-      var data = {
-        action: 'confirmPresence',
-        name: document.getElementById('name').value,
-        email: document.getElementById('mail').value,
-        phone: document.getElementById('telefone').value,
-        presence: document.querySelector('.selected__item').textContent || 'Não informado',
-        message: document.getElementById('textarea').value,
-        dateTime: dateTime
-      };
+        // Coleta os dados do formulário
+        var data = {
+          action: 'confirmPresence',
+          name: document.getElementById('name').value,
+          email: document.getElementById('mail').value,
+          phone: document.getElementById('telefone').value,
+          presence: document.querySelector('.selected__item').textContent || 'Não informado',
+          message: document.getElementById('textarea').value,
+          dateTime: dateTime
+        };
 
-      if (!data.name || !data.email || !data.phone || data.presence === 'Não informado') {
-        Swal.fire({
-          icon: 'warning',
-          title: 'Ops...',
-          text: 'Por favor, preencha todos os campos obrigatórios.'
-        });
-        return;
-      }
+        // Verifica se os campos obrigatórios estão preenchidos
+        if (!data.name || !data.email || !data.phone || data.presence === 'Não informado') {
+          Swal.fire({
+            icon: 'warning',
+            title: 'Ops...',
+            text: 'Por favor, preencha todos os campos obrigatórios.'
+          });
+          return;
+        }
 
-      fetch('https://script.google.com/macros/s/AKfycbxxekmfi4EbtsE5wrXZi_j4XFTkEDq_NdlIRJPktg65zQJAlAZS_CZ8MzEZnYpZB3U/exec', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      })
-      .then(response => response.json())
-      .then(result => {
-        if (result.status === 'success') {
+        // Envia os dados via POST para o Google Apps Script
+        fetch(scriptUrl, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        }).then(response => {
+          // Popup de sucesso com SweetAlert
           Swal.fire({
             icon: 'success',
             title: 'Confirmação enviada!',
-            text: result.message
+            text: 'Obrigado por confirmar sua presença!'
           });
-        } else {
+        }).catch(error => {
+          // Popup de erro com SweetAlert
           Swal.fire({
             icon: 'error',
             title: 'Erro!',
-            text: result.message
+            text: 'Ocorreu um erro ao enviar a confirmação. Por favor, tente novamente mais tarde.'
           });
-        }
-      })
-      .catch(error => {
-        Swal.fire({
-          icon: 'error',
-          title: 'Erro!',
-          text: 'Ocorreu um erro ao enviar a confirmação. Por favor, tente novamente mais tarde.'
         });
       });
-    });
-  </script>
+    </script>
   <!-- END Section: Rvsp -->
 
   	
