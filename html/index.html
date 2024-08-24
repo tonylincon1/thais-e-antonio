@@ -407,82 +407,112 @@
       }
 
       .quiz__table {
-        width: 100%;
-        border-collapse: collapse;
+          width: 100%;
+          border-collapse: collapse;
       }
 
       .quiz__table th, .quiz__table td {
-        padding: 10px;
-        text-align: center;
+          padding: 10px;
+          text-align: center;
+          font-size: 1rem;
       }
 
       .quiz__btn-wrap {
-        text-align: center;
-        margin-top: 20px;
-        display: flex;
-        justify-content: center;
+          text-align: center;
+          margin-top: 20px;
+          display: flex;
+          justify-content: center;
       }
 
       .popup {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.7);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.7);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 9999;
       }
 
       .popup__content {
-        background: #fff;
-        padding: 20px;
-        border-radius: 10px;
-        width: 70%;
-        max-width: 600px;
+          background: #fff;
+          padding: 20px;
+          border-radius: 10px;
+          width: 90%; /* Aumenta a responsividade */
+          max-width: 600px;
       }
 
       .form-group {
-        margin-bottom: 15px;
+          margin-bottom: 15px;
       }
 
       .form-group label {
-        display: block;
-        font-weight: bold;
+          display: block;
+          font-weight: bold;
       }
 
       .question {
-        margin-bottom: 15px;
+          margin-bottom: 15px;
       }
 
       .question label {
-        font-weight: bold;
-        display: block;
+          font-weight: bold;
+          display: block;
       }
 
       .popup__btn {
-        display: block;
-        margin: 0 auto;
-        padding: 10px 20px;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 16px;
+          display: block;
+          margin: 0 auto;
+          padding: 10px 20px;
+          color: #fff;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 16px;
       }
 
       .podium {
-        font-weight: bold;
-        background-color: #f0f0f0;
+          font-weight: bold;
+          background-color: #f0f0f0;
       }
 
       /* Estilo básico para o popup com rolamento */
       .scrollable-popup {
-        max-height: 80vh; /* Limita a altura máxima do popup */
-        overflow-y: auto; /* Adiciona barra de rolagem vertical se necessário */
+          max-height: 80vh;
+          overflow-y: auto;
       }
+
+      /* Estilos responsivos para diferentes tamanhos de tela */
+      @media (max-width: 768px) {
+          .popup__content {
+              width: 100%; /* Usa 100% da tela em dispositivos menores */
+              max-width: 100%;
+          }
+
+          .quiz__table th, .quiz__table td {
+              font-size: 0.9rem; /* Reduz o tamanho da fonte em telas menores */
+          }
+
+          .popup__btn {
+              font-size: 14px;
+              padding: 8px 16px;
+          }
+      }
+
+      @media (max-width: 480px) {
+          .quiz__table th, .quiz__table td {
+              font-size: 0.8rem;
+          }
+
+          .popup__btn {
+              font-size: 12px;
+              padding: 6px 12px;
+          }
+      }
+
     </style>
     <!-- END Section: Quiz -->
 
