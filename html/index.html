@@ -318,10 +318,12 @@
     </section>
 
     <script>
-      const scriptUrl = 'https://script.google.com/macros/s/AKfycbxTDWGTzS6i7hK1fL-OG2MHNFqMxI369djMU1oL5tz2d6HbFFSdZFtx3HtQt7gCUWqE/exec';
-      
+      const scriptUrl = 'https://script.google.com/macros/s/AKfycbwfeQF-lMkMdAhr9qu8wWwDydVzVeWSbJ98RlT_wwNP8DHPK6U1uCItWqfuZqXsHJTL/exec';
+
       function loadRanking() {
-        fetch(scriptUrl)
+        let fullUrl = scriptUrl + '?action=quizCasalRanking'; // Adiciona o parâmetro action
+
+        fetch(fullUrl)
           .then(response => response.json())
           .then(data => {
             let rankingTable = document.getElementById('ranking-table');
@@ -396,6 +398,7 @@
       }
 
       window.onload = loadRanking;
+
     </script>
 
     <style>
@@ -843,9 +846,11 @@
     const itemsPerPage = 9;
     let gifts = [];
 
+    let fullUrl = scriptUrl + '?action=getPresents';
+
     // Função para buscar presentes da planilha via Apps Script
     function fetchGifts() {
-      fetch('https://script.google.com/macros/s/AKfycbxxekmfi4EbtsE5wrXZi_j4XFTkEDq_NdlIRJPktg65zQJAlAZS_CZ8MzEZnYpZB3U/exec?action=getPresents')
+      fetch(fullUrl)
         .then(response => response.json())
         .then(data => {
           gifts = data;
@@ -945,8 +950,9 @@
       const giftName = document.getElementById('gift-name').textContent;
 
       if (donorName) {
-        fetch('https://script.google.com/macros/s/AKfycbxxekmfi4EbtsE5wrXZi_j4XFTkEDq_NdlIRJPktg65zQJAlAZS_CZ8MzEZnYpZB3U/exec', {
+        fetch(scriptUrl, {
           method: 'POST',
+          mode: 'no-cors',
           headers: {
             'Content-Type': 'application/json',
           },
@@ -955,37 +961,20 @@
             presente: giftName,
             nomeDoador: donorName
           })
-        })
-        .then(response => response.json())
-        .then(result => {
-          if (result.status === 'success') {
-            Swal.fire({
-              icon: 'success',
-              title: 'Confirmação enviada!',
-              text: result.message
-            });
-            document.getElementById('donation-modal').style.display = 'none';
-            fetchGifts();  // Atualiza a lista de presentes
-          } else {
-            Swal.fire({
-              icon: 'error',
-              title: 'Erro!',
-              text: result.message
-            });
-          }
-        })
-        .catch(error => {
+        }).then(response => {
+          // Popup de sucesso com SweetAlert
+          Swal.fire({
+            icon: 'success',
+            title: 'Presente enviado!',
+            text: 'Nós agradecemos muito pelo mimo!'
+          });
+        }).catch(error => {
+          // Popup de erro com SweetAlert
           Swal.fire({
             icon: 'error',
             title: 'Erro!',
-            text: 'Ocorreu um erro ao enviar a confirmação. Por favor, tente novamente mais tarde.'
+            text: 'Ocorreu um erro ao enviar a confirmação do presente. Por favor, tente novamente mais tarde.'
           });
-        });
-      } else {
-        Swal.fire({
-          icon: 'warning',
-          title: 'Nome obrigatório',
-          text: 'Por favor, preencha seu nome antes de confirmar a doação.'
         });
       }
     });
