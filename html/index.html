@@ -242,66 +242,75 @@
     </section>
 
     <style>
-      .wedding-photos {
-        padding: 20px;
-        text-align: center;
-      }
+      /* Estilo geral */
+.wedding-photos {
+  padding: 20px;
+  text-align: center;
+}
 
-      .wedding-title {
-        font-size: 2rem;
-        margin-bottom: 20px;
-      }
+.wedding-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
 
-      .wedding-swiper-container {
-        width: 100%;
-        max-width: 900px;
-        margin: 0 auto;
-      }
+.wedding-swiper-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: hidden; /* Adicionando overflow hidden para evitar overflow lateral */
+}
 
-      .wedding-slider {
-        display: flex;
-        gap: 15px; /* Espaço entre as imagens */
-      }
+.wedding-slider {
+  display: flex;
+  gap: 15px; /* Espaço entre as imagens */
+}
 
-      .wedding-photo {
-        text-align: center;
-        width: calc(50% - 15px); /* Aumentando um pouco a largura */
-      }
+.wedding-photo {
+  text-align: center;
+  width: calc(50% - 15px); /* Aumentando um pouco a largura */
+  max-width: 100%; /* Garantir que o elemento não exceda a largura do container */
+}
 
-      .wedding-img-responsive {
-        width: 100%;
-        height: auto;
-        display: block;
-        max-height: 500px; /* Aumentando um pouco o tamanho das imagens */
-        object-fit: cover;
-        margin: 0 auto;
-      }
+.wedding-img-responsive {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 500px; /* Aumentando um pouco o tamanho das imagens */
+  object-fit: cover;
+  margin: 0 auto;
+}
 
-      .wedding-buttons-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 10px;
-      }
+.wedding-buttons-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
 
-      .wedding-swiper-button-prev, .wedding-swiper-button-next {
-        color: #000; /* Mude a cor conforme a sua preferência */
-      }
+.wedding-swiper-button-prev, .wedding-swiper-button-next {
+  color: #000; /* Mude a cor conforme a sua preferência */
+}
 
-      .wedding-swiper-pagination {
-        display: none;
-      }
+.wedding-swiper-pagination {
+  display: none;
+}
 
-      /* Estilo para mobile */
-      @media (max-width: 768px) {
-        .wedding-photo {
-          width: 100%; /* Exibir uma imagem por vez na versão mobile */
-        }
+/* Estilo para mobile */
+@media (max-width: 768px) {
+  .wedding-photo {
+    width: 100%; /* Exibir uma imagem por vez na versão mobile */
+    max-width: 100%; /* Garantir que o elemento não exceda a largura do container */
+  }
 
-        .wedding-img-responsive {
-          max-height: 500px; /* Aumentar a altura máxima na versão mobile */
-        }
-      }
+  .wedding-img-responsive {
+    max-height: 500px; /* Aumentar a altura máxima na versão mobile */
+  }
+
+  .wedding-slider {
+    flex-wrap: nowrap; /* Evita quebra de linha no slider */
+  }
+}
+
     </style>
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
