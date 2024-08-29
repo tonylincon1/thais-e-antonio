@@ -316,7 +316,9 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
       var swiper = new Swiper('.wedding-swiper-container', {
-        loop: true,
+        loop: false,
+        centeredSlides: true, // Centraliza a imagem ativa
+        slidesPerView: 'auto', // Ajusta o slide ativo para ser o central
         pagination: {
           el: '.wedding-swiper-pagination',
           clickable: true,
@@ -352,7 +354,7 @@
               <tr>
                 <th><strong>Posição</strong></th>
                 <th><strong>Participante</strong></th>
-                <th><strong>Pontos (máx. 10)</strong></th>
+                <th><strong>Pontos</strong></th>
                 <th><strong>Data e Hora</strong></th>
               </tr>
             </thead>
@@ -657,9 +659,9 @@
                 <div class="venues__card-block"><span class="venues__card-label">Onde</span><span class="venue__card-data">Espaço Villa Ricca. <br> Av. Dr. Walter Bastos, 144 - Mosqueiro, Aracaju - SE</span></div>
               </div><a class="venues__card-link" href="#">Veja no mapa</a>
             </div>
-            <div class="address__map-container--left address__map">
+            <!-- <div class="address__map-container--left address__map">
               <div class="address__map--ceremony map" id="address__map--ceremony"></div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
