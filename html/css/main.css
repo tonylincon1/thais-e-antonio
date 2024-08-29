@@ -457,12 +457,15 @@ ul.color_schemes li {
   position: relative;
   width: 100%;
   height: 740px;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(97, 88, 105, 0.35)), to(rgba(97, 88, 105, 0.35))), url("../img/capa.JPG");
-  background: -o-linear-gradient(rgba(97, 88, 105, 0.35), rgba(97, 88, 105, 0.35)), url("../img/capa.JPG");
-  background: linear-gradient(rgba(97, 88, 105, 0.35), rgba(97, 88, 105, 0.35)), url("../img/capa.JPG");
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(97, 88, 105, 0.35)), to(rgba(97, 88, 105, 0.35))), url("../img/capa3.JPG");
+  background: -o-linear-gradient(rgba(97, 88, 105, 0.35), rgba(97, 88, 105, 0.35)), url("../img/capa3.JPG");
+  background: linear-gradient(rgba(97, 88, 105, 0.35), rgba(97, 88, 105, 0.35)), url("../img/capa3.JPG");
   background-repeat: no-repeat;
   background-position: center top;
-  background-size: cover; }
+  background-size: cover;
+  filter: grayscale(100%);
+}
+
 
 .header__nav {
   display: -webkit-box;
@@ -805,7 +808,7 @@ ul.color_schemes li {
 
 .couple__image {
   width: 352px;
-  height: 432px;
+  height: 332px;
   border: 8px solid #3b3937;
   position: relative; }
   .couple__image::after {
@@ -822,12 +825,12 @@ ul.color_schemes li {
 .couple__image-groom--left::after {
   top: -60px;
   left: 60px;
-  background-image: url("http://placehold.it/352x432"); }
+  background-image: url("../img/A\ Noiva.jpeg"); }
 
   .couple__image-bride--right::after {
     top: -50px; /* Ajuste o top para que a imagem comece do topo */
     right: 50px; /* Ajuste o right para que a imagem comece da direita */
-    background-image: url("../img/em_caninde.jpeg"); /* Caminho correto para a imagem */
+    background-image: url("../img/O\ Noivo.jpeg"); /* Caminho correto para a imagem */
     background-size: contain; /* Ajusta a imagem para caber dentro do contêiner sem cortar */
     background-position: center; /* Centraliza a imagem dentro do contêiner */
     background-repeat: no-repeat; /* Evita que a imagem se repita */
@@ -1110,8 +1113,8 @@ ul.color_schemes li {
   padding-bottom: 120px; }
   .photos .swiper-container {
     overflow: visible; }
-  .photos .s-title {
-    margin-bottom: 144px; }
+  /* .photos .s-title {
+    margin-bottom: 144px; } */
 
 .photo img {
   width: 100%; }
