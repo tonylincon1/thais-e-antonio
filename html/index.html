@@ -483,7 +483,7 @@
     </section>
 
     <script>
-      const scriptUrl = 'https://script.google.com/macros/s/AKfycbzLYyYsemSiPgILjd7_QPZ4lGCIce6TbFwJF-tRrj97N5MrjkNQ3UTAWBLmOO_yRgLI/exec';
+      const scriptUrl = 'https://script.google.com/macros/s/AKfycbw4fQw3pHPMPdsY29vmZgZbscRMWz-CqUBmJligSKfLq6S5wcSBaRjUrIO8xWSzXMgO/exec';
 
       function loadRanking() {
         let fullUrl = scriptUrl + '?action=quizCasalRanking'; // Adiciona o parâmetro action
@@ -1054,6 +1054,7 @@
       .then(response => response.json())
       .then(data => {
         gifts = data;
+        console.log(gifts);
         renderGifts(currentPage);
       })
       .catch(error => {
@@ -1068,14 +1069,14 @@
       presentList.innerHTML = ''; // Limpa os presentes anteriores
 
       // Ordena os presentes, colocando os disponíveis primeiro
-      const sortedGifts = [...gifts].sort((a, b) => (a[3] === 'Não') - (b[3] === 'Não'));
+      const sortedGifts = [...gifts].sort((a, b) => (a[4] === 'Não') - (b[4] === 'Não'));
 
       const start = (page - 1) * itemsPerPage;
       const end = start + itemsPerPage;
       const giftsToShow = sortedGifts.slice(start, end);
 
       giftsToShow.forEach(gift => {
-        const [name, photo, value, available, , , buyButtonId, publishableKey] = gift; // Inclui buyButtonId e publishableKey
+        const [id, name, photo, value, available, buyButtonId, publishableKey] = gift; // Inclui buyButtonId e publishableKey
         const giftBox = document.createElement('div');
         giftBox.classList.add('present-box');
 
@@ -1096,7 +1097,8 @@
             ${buyButtonId && publishableKey ? `
               <stripe-buy-button
                 buy-button-id="${buyButtonId}"
-                publishable-key="${publishableKey}">
+                publishable-key="${publishableKey}"
+                client-reference-id="${id}">
               </stripe-buy-button>
             ` : `
               <p><strong>Informações do pagamento indisponíveis</strong></p>
