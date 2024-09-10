@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thais e Antônio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Arapey&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet"/>
+
+    <link href="https://fonts.googleapis.com/css?family=Lora&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Marcellus&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700&amp;display=swap" rel="stylesheet"/>
+  <style>
+    /* Aplicando o estilo de background */
+    body {
+      margin: 0;
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: -webkit-gradient(linear, left top, left bottom, from(rgba(97, 88, 105, 0.35)), to(rgba(97, 88, 105, 0.35))), url('img/capa2.JPG');
+      background: -o-linear-gradient(rgba(97, 88, 105, 0.35), rgba(97, 88, 105, 0.35)), url("img/capa2.JPG");
+      background: linear-gradient(rgba(97, 88, 105, 0.35), rgba(97, 88, 105, 0.35)), url('img/capa2.JPG');
+      background-repeat: no-repeat;
+      background-position: center top;
+      background-size: cover;
+      filter: grayscale(100%);
+      position: relative;
+    }
+
+    /* Estilizando o popup como um elemento no centro */
+    .popup {
+      background-color: rgba(255, 255, 255, 0.9); /* Fundo semitransparente */
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      max-width: 500px; /* Aumentei a largura máxima */
+      width: 100%;
+    }
+
+    .popup h2 {
+      font-size: 2rem; /* Aumentei o tamanho da fonte */
+      margin-bottom: 20px;
+      color: #333;
+      font-family: 'Noto Serif Display', serif;
+      text-transform: uppercase;
+    }
+
+    .popup p {
+      font-size: 1.3rem; /* Aumentei o tamanho da fonte */
+      margin-bottom: 20px;
+      color: #555;
+    }
+
+    .popup button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: #3085d6;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .popup button:hover {
+      background-color: #1c6abc;
+    }
+
+    /* Responsividade - ajustando o popup para telas menores */
+    @media (max-width: 600px) {
+      .popup {
+        max-width: 90%; /* Em telas menores, o popup ocupa até 90% da largura */
+        padding: 20px;
+      }
+
+      .popup h2 {
+        font-size: 1.5rem; /* Reduzindo o tamanho da fonte em telas menores */
+      }
+
+      .popup p {
+        font-size: 1.1rem; /* Reduzindo o tamanho da fonte em telas menores */
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="css/main.css"/>
+</head>
+<body>
+
+  <div class="popup">
+    <h2>Obrigado pelo presente!</h2>
+    <p>Agradecemos imensamente pelo carinho.<br>Com amor, Thais e Antônio.</p>
+    <button onclick="goToHome()">Página inicial</button>
+  </div>
+
+  <script>
+    // Função para redirecionar para a página inicial
+    function goToHome() {
+      window.location.href = 'index.html'; // Substitua pelo caminho correto
+    }
+  </script>
+
+</body>
+</html>
