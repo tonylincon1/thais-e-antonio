@@ -642,10 +642,20 @@ ul.color_schemes li {
     display: block;
     margin-right: 30px; }
   .header__content {
-    padding: 38px 72px 32px 72px; }
+    padding: 18px 5px 12px 5px; }
   .header__title {
     font-size: 52px;
-    line-height: 82px; } }
+    line-height: 82px; } 
+    .header__countdown {
+      background-color: #fafafa;
+        position: absolute;
+        left: 50%;
+        bottom: -34%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    padding: 20px 60px 24px 60px;
+  }}
 
 @media only screen and (max-width: 550px) {
   .header__content {
@@ -666,15 +676,7 @@ ul.color_schemes li {
 
 /*1.1 END Header media*/
 /*1.1.1 Countdown*/
-.header__countdown {
-  background-color: #fafafa;
-  position: absolute;
-  left: 50%;
-  bottom: -34%;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  padding: 40px 145px 44px 145px; }
+
 
 .countdown__title {
   font-size: 32px;
@@ -1041,7 +1043,23 @@ ul.color_schemes li {
 @media only screen and (min-width: 1400px) {
   .story__slider-image img {
     max-width: 576px !important;
-    height: 440px !important; } }
+    height: 440px !important; }
+  }
+
+  @media only screen and (min-width: 800px) and (max-width: 1400px) {
+    .header__countdown {
+        background-color: #fafafa;
+        position: absolute;
+        left: 50%;
+        bottom: -34%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        padding: 40px 145px 44px 145px;
+    }
+}
+
+
 
 @media only screen and (max-width: 1040px) {
   .story__slider-text {
