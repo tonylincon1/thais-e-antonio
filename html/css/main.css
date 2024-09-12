@@ -1059,6 +1059,18 @@ ul.color_schemes li {
     }
 }
 
+@media only screen and (max-width: 430px) {
+  .header__subtitle {
+      display: none;
+  }
+  .header__content{
+    margin-top: 0px;
+  }
+  .header__title{
+    font-size: 42px;
+  }
+}
+
 
 
 @media only screen and (max-width: 1040px) {
