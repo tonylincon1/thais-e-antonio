@@ -259,6 +259,7 @@
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
+    overflow: hidden; /* Evitar que o swiper crie overflow na página */
   }
 
   .wedding-slider {
@@ -334,9 +335,9 @@
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script>
   var swiper = new Swiper('.wedding-swiper-container', {
-    loop: false, // desabilita o loop
+    loop: false, // Desabilita o loop
     centeredSlides: true, // Centraliza a imagem ativa
-    slidesPerView: 1, // Mostra uma foto por vez
+    slidesPerView: 1, // Exibe uma foto por vez
     spaceBetween: 0, // Remove espaço entre as fotos
     navigation: {
       nextEl: '.wedding-swiper-button-next',
@@ -344,15 +345,15 @@
     },
     breakpoints: {
       768: {
-        slidesPerView: 1, // Garante que apenas uma imagem seja mostrada por vez em telas maiores
+        slidesPerView: 1, // Garante uma imagem por vez em telas maiores
       },
       0: {
-        slidesPerView: 1, // Garante que apenas uma imagem seja mostrada por vez em telas menores
+        slidesPerView: 1, // Garante uma imagem por vez em dispositivos móveis
       }
     },
     on: {
       slideChangeTransitionEnd: function () {
-        swiper.update(); // Garante que o Swiper atualize a posição correta ao mudar de slide
+        swiper.update(); // Atualiza a posição correta ao mudar de slide
       }
     }
   });
