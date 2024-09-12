@@ -205,161 +205,159 @@
   	<!-- END Section: Story -->
   	
   	<!-- Section: Wedding Photos -->
-<section class="wedding-photos" id="wedding-photos">
-  <h2 class="s-title text--colored">Fotos</h2>
-  <div class="wedding-swiper-container">
-    <div class="wedding-slider swiper-wrapper">
-      <div class="wedding-photo swiper-slide">
-        <a class="wedding-fancy" href="img/Pré Wedding/1.JPG" data-fancybox="gallery">
-          <img class="wedding-img-responsive" src="img/Pré Wedding/1.JPG" alt="Photo 1"/>
-        </a>
+    <section class="wedding-photos" id="wedding-photos">
+      <h2 class="s-title text--colored">Fotos</h2>
+      <div class="wedding-swiper-container">
+        <div class="wedding-slider swiper-wrapper">
+          <div class="wedding-photo swiper-slide">
+            <a class="wedding-fancy" href="img/Pré Wedding/1.JPG" data-fancybox="gallery">
+              <img class="wedding-img-responsive" src="img/Pré Wedding/1.JPG" alt="Photo 1"/>
+            </a>
+          </div>
+          <div class="wedding-photo swiper-slide">
+            <a class="wedding-fancy" href="img/Pré Wedding/2.JPG" data-fancybox="gallery">
+              <img class="wedding-img-responsive" src="img/Pré Wedding/2.JPG" alt="Photo 2"/>
+            </a>
+          </div>
+          <div class="wedding-photo swiper-slide">
+            <a class="wedding-fancy" href="img/Pré Wedding/3.JPG" data-fancybox="gallery">
+              <img class="wedding-img-responsive" src="img/Pré Wedding/3.JPG" alt="Photo 3"/>
+            </a>
+          </div>
+          <div class="wedding-photo swiper-slide">
+            <a class="wedding-fancy" href="img/Pré Wedding/4.JPG" data-fancybox="gallery">
+              <img class="wedding-img-responsive" src="img/Pré Wedding/4.JPG" alt="Photo 4"/>
+            </a>
+          </div>
+          <div class="wedding-photo swiper-slide">
+            <a class="wedding-fancy" href="img/Pré Wedding/5.JPG" data-fancybox="gallery">
+              <img class="wedding-img-responsive" src="img/Pré Wedding/5.JPG" alt="Photo 5"/>
+            </a>
+          </div>
+          <div class="wedding-photo swiper-slide">
+            <a class="wedding-fancy" href="img/Pré Wedding/6.JPG" data-fancybox="gallery">
+              <img class="wedding-img-responsive" src="img/Pré Wedding/6.JPG" alt="Photo 6"/>
+            </a>
+          </div>
+        </div>
+        <div class="wedding-buttons-container">
+          <div class="wedding-swiper-button-prev"></div>
+          <div class="wedding-swiper-pagination text--colored"></div>
+          <div class="wedding-swiper-button-next"></div>
+        </div>
       </div>
-      <div class="wedding-photo swiper-slide">
-        <a class="wedding-fancy" href="img/Pré Wedding/2.JPG" data-fancybox="gallery">
-          <img class="wedding-img-responsive" src="img/Pré Wedding/2.JPG" alt="Photo 2"/>
-        </a>
-      </div>
-      <div class="wedding-photo swiper-slide">
-        <a class="wedding-fancy" href="img/Pré Wedding/3.JPG" data-fancybox="gallery">
-          <img class="wedding-img-responsive" src="img/Pré Wedding/3.JPG" alt="Photo 3"/>
-        </a>
-      </div>
-      <div class="wedding-photo swiper-slide">
-        <a class="wedding-fancy" href="img/Pré Wedding/4.JPG" data-fancybox="gallery">
-          <img class="wedding-img-responsive" src="img/Pré Wedding/4.JPG" alt="Photo 4"/>
-        </a>
-      </div>
-      <div class="wedding-photo swiper-slide">
-        <a class="wedding-fancy" href="img/Pré Wedding/5.JPG" data-fancybox="gallery">
-          <img class="wedding-img-responsive" src="img/Pré Wedding/5.JPG" alt="Photo 5"/>
-        </a>
-      </div>
-      <div class="wedding-photo swiper-slide">
-        <a class="wedding-fancy" href="img/Pré Wedding/6.JPG" data-fancybox="gallery">
-          <img class="wedding-img-responsive" src="img/Pré Wedding/6.JPG" alt="Photo 6"/>
-        </a>
-      </div>
-    </div>
-    <div class="wedding-buttons-container">
-      <div class="wedding-swiper-button-prev"></div>
-      <div class="wedding-swiper-pagination text--colored"></div>
-      <div class="wedding-swiper-button-next"></div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<style>
-  /* Estilo geral */
-  .wedding-photos {
-    padding: 20px;
-    text-align: center;
-  }
-
-  .wedding-swiper-container {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    overflow: hidden; /* Evitar que o swiper crie overflow na página */
-  }
-
-  .wedding-slider {
-    display: flex;
-  }
-
-  .wedding-photo {
-    text-align: center;
-    width: 100%;
-    opacity: 0; /* Tornar as outras fotos invisíveis */
-    transition: opacity 0.3s ease-in-out;
-  }
-
-  .swiper-slide-active {
-    opacity: 1 !important; /* Exibir apenas a foto ativa */
-  }
-
-  .wedding-img-responsive {
-    width: 100%;
-    height: auto;
-    display: block;
-    max-height: 500px;
-    object-fit: cover;
-    margin: 0 auto;
-  }
-
-  .wedding-buttons-container {
-    display: flex;
-    justify-content: center; /* Centraliza as setas */
-    align-items: center;
-    margin-top: 10px;
-    position: relative;
-    gap: 15px; /* Espaçamento entre as setas */
-  }
-
-  .wedding-swiper-button-prev, .wedding-swiper-button-next {
-    width: 40px;
-    height: 40px;
-    background-color: rgba(0, 0, 0, 0.2); /* Fundo transparente */
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-
-  .wedding-swiper-button-prev:hover, .wedding-swiper-button-next:hover {
-    background-color: rgba(0, 0, 0, 0.4); /* Cor mais escura no hover */
-  }
-
-  .wedding-swiper-button-prev::before, .wedding-swiper-button-next::before {
-    content: '';
-    border: solid white;
-    border-width: 0 2px 2px 0; /* Bordas mais finas para a seta */
-    display: inline-block;
-    padding: 8px;
-  }
-
-  .wedding-swiper-button-prev::before {
-    transform: rotate(135deg); /* Seta para a esquerda */
-  }
-
-  .wedding-swiper-button-next::before {
-    transform: rotate(-45deg); /* Seta para a direita */
-  }
-
-  .wedding-swiper-pagination {
-    display: none;
-  }
-</style>
-
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script>
-  var swiper = new Swiper('.wedding-swiper-container', {
-    loop: false, // Desabilita o loop
-    centeredSlides: true, // Centraliza a imagem ativa
-    slidesPerView: 1, // Exibe uma foto por vez
-    spaceBetween: 0, // Remove espaço entre as fotos
-    navigation: {
-      nextEl: '.wedding-swiper-button-next',
-      prevEl: '.wedding-swiper-button-prev',
-    },
-    breakpoints: {
-      768: {
-        slidesPerView: 1, // Garante uma imagem por vez em telas maiores
-      },
-      0: {
-        slidesPerView: 1, // Garante uma imagem por vez em dispositivos móveis
+    <style>
+      /* Estilo geral */
+      .wedding-photos {
+        padding: 20px;
+        text-align: center;
       }
-    },
-    on: {
-      slideChangeTransitionEnd: function () {
-        swiper.update(); // Atualiza a posição correta ao mudar de slide
+
+      .wedding-swiper-container {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        overflow: hidden; /* Evitar que o swiper crie overflow na página */
       }
-    }
-  });
-</script>
 
+      .wedding-slider {
+        display: flex;
+      }
 
+      .wedding-photo {
+        text-align: center;
+        width: 100%;
+        opacity: 0; /* Tornar as outras fotos invisíveis */
+        transition: opacity 0.3s ease-in-out;
+      }
+
+      .swiper-slide-active {
+        opacity: 1 !important; /* Exibir apenas a foto ativa */
+      }
+
+      .wedding-img-responsive {
+        width: 100%;
+        height: auto;
+        display: block;
+        max-height: 500px;
+        object-fit: cover;
+        margin: 0 auto;
+      }
+
+      .wedding-buttons-container {
+        display: flex;
+        justify-content: center; /* Centraliza as setas */
+        align-items: center;
+        margin-top: 10px;
+        position: relative;
+        gap: 15px; /* Espaçamento entre as setas */
+      }
+
+      .wedding-swiper-button-prev, .wedding-swiper-button-next {
+        width: 40px;
+        height: 40px;
+        background-color: rgba(0, 0, 0, 0.2); /* Fundo transparente */
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .wedding-swiper-button-prev:hover, .wedding-swiper-button-next:hover {
+        background-color: rgba(0, 0, 0, 0.4); /* Cor mais escura no hover */
+      }
+
+      .wedding-swiper-button-prev::before, .wedding-swiper-button-next::before {
+        content: '';
+        border: solid white;
+        border-width: 0 2px 2px 0; /* Bordas mais finas para a seta */
+        display: inline-block;
+        padding: 8px;
+      }
+
+      .wedding-swiper-button-prev::before {
+        transform: rotate(135deg); /* Seta para a esquerda */
+      }
+
+      .wedding-swiper-button-next::before {
+        transform: rotate(-45deg); /* Seta para a direita */
+      }
+
+      .wedding-swiper-pagination {
+        display: none;
+      }
+    </style>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper('.wedding-swiper-container', {
+        loop: false, // Desabilita o loop
+        centeredSlides: true, // Centraliza a imagem ativa
+        slidesPerView: 1, // Exibe uma foto por vez
+        spaceBetween: 0, // Remove espaço entre as fotos
+        navigation: {
+          nextEl: '.wedding-swiper-button-next',
+          prevEl: '.wedding-swiper-button-prev',
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 1, // Garante uma imagem por vez em telas maiores
+          },
+          0: {
+            slidesPerView: 1, // Garante uma imagem por vez em dispositivos móveis
+          }
+        },
+        on: {
+          slideChangeTransitionEnd: function () {
+            swiper.update(); // Atualiza a posição correta ao mudar de slide
+          }
+        }
+      });
+    </script>
     <!-- END Section: Wedding Photos -->
 
     <!-- Section: Quiz do Casal -->
@@ -708,14 +706,11 @@
               </div>
               <div class="venues__card-info">
                 <div class="venues__card-block"><span class="venues__card-label mrg">Quando</span>
-                  <time class="venues__card-data">18:00, 15/11/2024</time>
+                  <time class="venues__card-data">No dia 15.11.24, às 18h.</time>
                 </div>
                 <div class="venues__card-block"><span class="venues__card-label">Onde</span><span class="venue__card-data">Espaço Villa Ricca. <br> Av. Dr. Walter Bastos, 144 - Mosqueiro, Aracaju - SE</span></div>
-              </div><a class="venues__card-link" href="#">Veja no mapa</a>
+              </div><a class="venues__card-link" href="https://maps.app.goo.gl/qvvQbZ8shQWaz2wQ8?g_st=iw" target="_blank">Veja no mapa</a>
             </div>
-            <!-- <div class="address__map-container--left address__map">
-              <div class="address__map--ceremony map" id="address__map--ceremony"></div>
-            </div> -->
           </div>
         </div>
       </div>
