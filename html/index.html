@@ -1082,7 +1082,7 @@
       const giftsToShow = sortedGifts.slice(start, end);
 
       giftsToShow.forEach(gift => {
-        const [id, name, photo, value, available, buyButtonId, publishableKey] = gift; // Inclui buyButtonId e publishableKey
+        const [id, name, photo, value, available, buyButtonId] = gift; // Remove publishableKey
         const giftBox = document.createElement('div');
         giftBox.classList.add('present-box');
 
@@ -1100,22 +1100,58 @@
             <img src="${photo}" alt="${name}">
             <h3>${name}</h3>
             <p>Valor: R$ ${value}</p>
-            ${buyButtonId && publishableKey ? `
-              <stripe-buy-button
-                buy-button-id="${buyButtonId}"
-                publishable-key="${publishableKey}"
-                client-reference-id="${id}">
-              </stripe-buy-button>
-            ` : `
-              <p><strong>Informações do pagamento indisponíveis</strong></p>
-            `}
           `;
+
+          if (buyButtonId) {
+            // Cria o script de pagamento do Mercado Pago
+            const script = document.createElement('script');
+            script.src = "https://www.mercadopago.com.br/integrations/v1/web-payment-checkout.js";
+            script.setAttribute('data-preference-id', buyButtonId);
+            script.setAttribute('data-source', 'button');
+
+            // Adiciona o script ao giftBox
+            giftBox.appendChild(script);
+
+            // Espera até que o script seja carregado e o botão criado
+            script.onload = () => {
+              // Seleciona o botão gerado pelo script do Mercado Pago
+              const mpButton = giftBox.querySelector('.mercadopago-button');
+
+              // Altera o texto do botão para "Presentear" e aplica o estilo CSS
+              if (mpButton) {
+                mpButton.innerText = "Presentear";
+
+                // Aplica o estilo CSS ao botão
+                mpButton.style.display = 'block';
+                mpButton.style.color = '#fff';
+                mpButton.style.position = 'relative';
+                mpButton.style.background = 'none';
+                mpButton.style.border = 'none';
+                mpButton.style.padding = '12px 40px';
+                mpButton.style.paddingRight = '40px';
+                mpButton.style.backgroundColor = '#3b3937';
+                mpButton.style.fontFamily = '"Marcellus-Regular", serif';
+                mpButton.style.fontSize = '16px';
+                mpButton.style.lineHeight = '20px';
+                mpButton.style.textTransform = 'uppercase';
+                mpButton.style.border = '2px solid transparent';
+                mpButton.style.opacity = '1';
+                mpButton.style.transition = 'all 0.3s ease-out';
+              }
+            };
+          } else {
+            const paymentInfo = document.createElement('p');
+            paymentInfo.innerHTML = "<strong>Informações do pagamento indisponíveis</strong>";
+            giftBox.appendChild(paymentInfo);
+          }
         }
+
         presentList.appendChild(giftBox);
       });
 
       updatePagination();
     }
+
 
     // Função para atualizar o estado dos botões de paginação
     function updatePagination() {
