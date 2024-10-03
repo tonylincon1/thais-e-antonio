@@ -1103,42 +1103,68 @@
           `;
 
           if (buyButtonId) {
-            // Cria o script de pagamento do Mercado Pago
-            const script = document.createElement('script');
-            script.src = "https://www.mercadopago.com.br/integrations/v1/web-payment-checkout.js";
-            script.setAttribute('data-preference-id', buyButtonId);
-            script.setAttribute('data-source', 'button');
+            if (buyButtonId.startsWith('http')) { 
+              // Caso seja um link, cria um botão com link direto e abre em nova aba
+              const linkButton = document.createElement('a');
+              linkButton.href = buyButtonId;
+              linkButton.target = '_blank'; // Abre o link em uma nova aba
+              linkButton.innerText = "Presentear";
+              linkButton.classList.add('custom-button'); // Adicione uma classe para estilo
+              
+              // Aplica o estilo CSS ao botão
+              linkButton.style.display = 'block';
+              linkButton.style.color = '#fff';
+              linkButton.style.position = 'relative';
+              linkButton.style.background = 'none';
+              linkButton.style.border = 'none';
+              linkButton.style.padding = '12px 40px';
+              linkButton.style.paddingRight = '40px';
+              linkButton.style.backgroundColor = '#3b3937';
+              linkButton.style.fontFamily = '"Marcellus-Regular", serif';
+              linkButton.style.fontSize = '16px';
+              linkButton.style.lineHeight = '20px';
+              linkButton.style.textTransform = 'uppercase';
+              linkButton.style.border = '2px solid transparent';
+              linkButton.style.opacity = '1';
+              linkButton.style.transition = 'all 0.3s ease-out';
+              linkButton.style.borderRadius = '5px'; // Borda arredondada
 
-            // Adiciona o script ao giftBox
-            giftBox.appendChild(script);
+              giftBox.appendChild(linkButton);
+            } else { 
+              // Cria o script de pagamento do Mercado Pago
+              const script = document.createElement('script');
+              script.src = "https://www.mercadopago.com.br/integrations/v1/web-payment-checkout.js";
+              script.setAttribute('data-preference-id', buyButtonId);
+              script.setAttribute('data-source', 'button');
 
-            // Espera até que o script seja carregado e o botão criado
-            script.onload = () => {
-              // Seleciona o botão gerado pelo script do Mercado Pago
-              const mpButton = giftBox.querySelector('.mercadopago-button');
+              // Adiciona o script ao giftBox
+              giftBox.appendChild(script);
 
-              // Altera o texto do botão para "Presentear" e aplica o estilo CSS
-              if (mpButton) {
-                mpButton.innerText = "Presentear";
-
-                // Aplica o estilo CSS ao botão
-                mpButton.style.display = 'block';
-                mpButton.style.color = '#fff';
-                mpButton.style.position = 'relative';
-                mpButton.style.background = 'none';
-                mpButton.style.border = 'none';
-                mpButton.style.padding = '12px 40px';
-                mpButton.style.paddingRight = '40px';
-                mpButton.style.backgroundColor = '#3b3937';
-                mpButton.style.fontFamily = '"Marcellus-Regular", serif';
-                mpButton.style.fontSize = '16px';
-                mpButton.style.lineHeight = '20px';
-                mpButton.style.textTransform = 'uppercase';
-                mpButton.style.border = '2px solid transparent';
-                mpButton.style.opacity = '1';
-                mpButton.style.transition = 'all 0.3s ease-out';
-              }
-            };
+              // Espera até que o script seja carregado e o botão criado
+              script.onload = () => {
+                const mpButton = giftBox.querySelector('.mercadopago-button');
+                if (mpButton) {
+                  mpButton.innerText = "Presentear";
+                  // Aplica o estilo CSS ao botão
+                  mpButton.style.display = 'block';
+                  mpButton.style.color = '#fff';
+                  mpButton.style.position = 'relative';
+                  mpButton.style.background = 'none';
+                  mpButton.style.border = 'none';
+                  mpButton.style.padding = '12px 40px';
+                  mpButton.style.paddingRight = '40px';
+                  mpButton.style.backgroundColor = '#3b3937';
+                  mpButton.style.fontFamily = '"Marcellus-Regular", serif';
+                  mpButton.style.fontSize = '16px';
+                  mpButton.style.lineHeight = '20px';
+                  mpButton.style.textTransform = 'uppercase';
+                  mpButton.style.border = '2px solid transparent';
+                  mpButton.style.opacity = '1';
+                  mpButton.style.transition = 'all 0.3s ease-out';
+                  mpButton.style.borderRadius = '5px'; // Borda arredondada
+                }
+              };
+            }
           } else {
             const paymentInfo = document.createElement('p');
             paymentInfo.innerHTML = "<strong>Informações do pagamento indisponíveis</strong>";
@@ -1151,6 +1177,8 @@
 
       updatePagination();
     }
+
+
 
 
     // Função para atualizar o estado dos botões de paginação
