@@ -1045,7 +1045,7 @@ ul.color_schemes li {
     height: 440px !important; }
   }
 
-  @media only screen and (min-width: 800px) and (max-width: 1800px) {
+  @media only screen and (min-width: 800px) and (max-width: 2800px) {
     .header__countdown {
         background-color: #fafafa;
         position: absolute;
