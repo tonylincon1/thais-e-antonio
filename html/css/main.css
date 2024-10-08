@@ -1558,11 +1558,13 @@ ul.color_schemes li {
     left: 0;
     top: 0;
     width: 40%;
-    height: 100%;
-    background-image: url("../img/RVSP.png");
+    height: 80%;
+    background-image: url("../img/RVSP.jpeg");
     background-position: right center;
-    background-size: cover;
-    background-repeat: no-repeat; }
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
 
 .rvsp .container {
   display: -webkit-box;
@@ -1890,6 +1892,16 @@ ul.color_schemes li {
   width: 100%;
   background-color: #fafafa;
   position: relative; }
+
+  .footer__content {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     /* Centraliza verticalmente */
+    text-align: center;      /* Garante que o texto também fique centralizado */
+    flex-direction: row;     /* Alinha os itens em linha (padrão, mas garantido aqui) */
+    gap: 10px;               /* Adiciona espaçamento entre os itens, ajuste conforme necessário */
+}
+
 
 .footer__content {
   display: -webkit-box;
