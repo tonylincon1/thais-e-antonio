@@ -1075,7 +1075,7 @@
       presentList.innerHTML = ''; // Limpa os presentes anteriores
 
       // Ordena os presentes, colocando os disponíveis primeiro
-      const sortedGifts = [...gifts].sort((a, b) => (a[4] === 'Não') - (b[4] === 'Não'));
+      const sortedGifts = [...gifts].sort((a, b) => parseFloat(a[3]) - parseFloat(b[3]));
 
       const start = (page - 1) * itemsPerPage;
       const end = start + itemsPerPage;
