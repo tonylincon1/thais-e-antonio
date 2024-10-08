@@ -1549,7 +1549,7 @@ ul.color_schemes li {
 /* 1.6 RVSP */
 .rvsp {
   padding-top: 96px;
-  padding-bottom: 144px;
+  padding-bottom: 24px;
   background-color: #fafafa;
   position: relative; }
   .rvsp::before {
